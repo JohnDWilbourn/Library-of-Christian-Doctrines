@@ -34,6 +34,26 @@ def extract_verse_relationships(html_file):
             href = link.get('href', '')
             if 'esv.org' in href or 'biblegateway' in href:
                 verse_ref = link.get_text(strip=True)
+                
+                # Skip bare numbers - they need context
+                if verse_ref.isdigit():
+                    # Try to get book and chapter from previous sibling text
+                    prev_text = ''
+                    for sibling in link.previous_siblings:
+                        if isinstance(sibling, str):
+                            prev_text = sibling + prev_text
+                        else:
+                            break
+                    
+                    # Look for pattern like "Book Chapter:" before the number
+                    match = re.search(r'([1-3]?\s*[A-Za-z]+\.?\s+\d+):?\s*$', prev_text)
+                    if match:
+                        book_chapter = match.group(1).strip()
+                        verse_ref = f"{book_chapter}:{verse_ref}"
+                    else:
+                        # Can't determine context, skip this reference
+                        continue
+                
                 verses_in_doctrine.append(verse_ref)
                 verse_to_doctrines[verse_ref].add(doctrine_name)
         
@@ -331,10 +351,11 @@ def main():
     """Main execution."""
     print("Adding cross-reference suggestion engine...\n")
     
-    add_cross_references(
-        'Doctrines/doctrines_library_wp_clean.html',
-        'Doctrines/doctrines_library_wp_clean.html'
-    )
+    # Process both files
+    for filename in ['doctrines_library_wp_publish.html', 'doctrines_library_wp_clean.html']:
+        filepath = f'Doctrines/{filename}'
+        print(f"\nProcessing {filename}...")
+        add_cross_references(filepath, filepath)
     
     print("\n✓ Cross-reference system complete!")
     print("  - Click any scripture reference to see related verses")
