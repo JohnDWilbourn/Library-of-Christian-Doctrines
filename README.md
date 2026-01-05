@@ -42,4 +42,6 @@ Run the Python scripts in sequence as needed to regenerate the HTML files after 
 - BeautifulSoup4 (for HTML parsing)
 
 ## License
-All rights reserved.
+MIT License - See [LICENSE](LICENSE) file for details.
+
+Feel free to use, modify, and distribute this project for your ministry or educational purposes.
