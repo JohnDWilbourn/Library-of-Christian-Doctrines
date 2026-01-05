@@ -26,11 +26,13 @@ def add_rate_limiting():
     'use strict';
     
     const ESV_RATE_LIMITS = {
-        perMinute: 60,      // Max 60 requests per minute
-        perHour: 1000,      // Max 1,000 requests per hour
-        perDay: 5000,       // Max 5,000 requests per day
-        maxVerses: 500,     // Max 500 verses per query
-        maxCacheSize: 500   // Max 500 verses cached
+        perMinute: 60,          // Max 60 requests per minute
+        perHour: 1000,          // Max 1,000 requests per hour
+        perDay: 5000,           // Max 5,000 requests per day
+        maxVerses: 500,         // Max 500 CONSECUTIVE verses per query or half a book (whichever is less)
+        maxCacheSize: 500,      // Max 500 CONSECUTIVE verses cached locally
+        maxDisplay: 500,        // Max 500 CONSECUTIVE verses displayed on any page
+        maxBookPercent: 0.5     // Cannot exceed 50% of any book
     };
     
     const STORAGE_KEY = 'esv_api_rate_limits';
