@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - intermediate files (keep only _wp_clean.html versions)
+Doctrines/doctrines_library.html
+Doctrines/doctrines_library_wp.html
+Doctrines/scripture_index_new.html
+Doctrines/scripture_index_wp.html

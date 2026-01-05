@@ -1,0 +1,257 @@
+/* =================================================================
+   BIBLE DOCTRINES LIBRARY - Additional CSS
+   Add this to WordPress → Appearance → Customize → Additional CSS
+   ================================================================= */
+
+/* Wrapper for Bible Doctrines - scoped to avoid conflicts */
+.bd-wrapper { 
+    font-family: Georgia, serif !important; 
+    max-width: 900px !important; 
+    margin: 2rem auto !important; 
+    line-height: 1.8 !important; 
+    padding: 20px !important; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #2c3e50 !important;
+    border-radius: 8px !important;
+}
+
+.bd-wrapper h1 { 
+    text-align: center !important; 
+    font-size: 2.5em !important; 
+    margin-bottom: 0.5em !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+    padding: 1em 0 !important;
+    border-left: none !important;
+}
+
+.bd-wrapper h2 { 
+    text-align: center !important; 
+    font-size: 1.8em !important; 
+    margin: 2em 0 1em !important; 
+    color: #2c5282 !important;
+    border-bottom: 3px solid #4299e1 !important; 
+    padding-bottom: 0.5em !important;
+    background: linear-gradient(to right, transparent, rgba(66, 153, 225, 0.1), transparent) !important;
+}
+
+.bd-wrapper h3 { 
+    margin: 1.5em 0 0.5em !important; 
+    font-size: 1.4em !important;
+    color: #2d3748 !important;
+}
+
+.bd-wrapper section {
+    background: white !important;
+    padding: 2em !important;
+    margin-bottom: 2em !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.bd-wrapper ol.roman { 
+    counter-reset: roman !important; 
+    list-style: none !important; 
+}
+
+.bd-wrapper ol.roman > li { 
+    margin-bottom: 1.5em !important; 
+    position: relative !important; 
+    padding-left: 2.5em !important;
+    line-height: 1.8 !important;
+}
+
+.bd-wrapper ol.roman > li::before { 
+    content: counter(roman, upper-roman) ". " !important; 
+    counter-increment: roman !important; 
+    font-weight: bold !important; 
+    color: #4299e1 !important;
+    position: absolute !important; 
+    left: 0 !important; 
+}
+
+.bd-wrapper ol.alpha { 
+    counter-reset: alpha !important; 
+    list-style: none !important; 
+    padding-left: 2em !important; 
+}
+
+.bd-wrapper ol.alpha > li { 
+    margin-bottom: 0.8em !important; 
+    position: relative !important; 
+    padding-left: 2em !important;
+    line-height: 1.7 !important;
+}
+
+.bd-wrapper ol.alpha > li::before { 
+    content: counter(alpha, upper-alpha) ". " !important; 
+    counter-increment: alpha !important; 
+    font-weight: bold !important; 
+    color: #805ad5 !important;
+    position: absolute !important; 
+    left: 0 !important; 
+}
+
+.bd-wrapper ol.decimal { 
+    counter-reset: decimal !important; 
+    list-style: none !important; 
+    padding-left: 2em !important; 
+}
+
+.bd-wrapper ol.decimal > li::before { 
+    content: counter(decimal) ". " !important; 
+    counter-increment: decimal !important;
+    color: #48bb78 !important;
+    font-weight: bold !important;
+}
+
+.bd-wrapper .footnote { 
+    font-size: 0.9em !important; 
+    margin-top: 3em !important; 
+    padding: 1em !important;
+    background: #f7fafc !important;
+    border-left: 4px solid #4299e1 !important;
+    border-radius: 4px !important;
+}
+
+.bd-wrapper sup { 
+    vertical-align: super !important; 
+    font-size: smaller !important; 
+    color: #4299e1 !important; 
+}
+
+.bd-wrapper nav { 
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.5em !important;
+    margin-bottom: 2em !important; 
+    padding: 1em !important;
+}
+
+.bd-wrapper nav a { 
+    padding: 0.5em 1em !important;
+    text-decoration: none !important; 
+    color: #2c5282 !important;
+    background: rgba(255,255,255,0.9) !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.bd-wrapper nav a:hover { 
+    background: #4299e1 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+.bd-wrapper #toc { 
+    background: rgba(255,255,255,0.95) !important;
+    padding: 2em !important; 
+    border-radius: 12px !important;
+    margin-bottom: 2em !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.bd-wrapper #toc h2 {
+    color: #2c5282 !important;
+    margin-top: 0 !important;
+}
+
+.bd-wrapper .diagram { 
+    text-align: center !important; 
+    margin: 3em 0 !important;
+    padding: 1em !important;
+    background: #f7fafc !important;
+    border-radius: 8px !important;
+}
+
+.bd-wrapper .diagram img { 
+    max-width: 100% !important; 
+    height: auto !important; 
+    border: 2px solid #e2e8f0 !important; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+    border-radius: 8px !important;
+}
+
+.bd-wrapper .doctrine-separator { 
+    text-align: center !important; 
+    margin: 3em 0 !important; 
+    color: #a0aec0 !important; 
+    font-size: 1.5em !important; 
+    letter-spacing: 0.5em !important;
+}
+
+.bd-wrapper .doctrine-separator::after { 
+    content: "❦" !important; 
+}
+
+.bd-wrapper a { 
+    color: #3182ce !important; 
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.bd-wrapper a:hover { 
+    color: #2c5282 !important;
+    text-decoration: underline !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .bd-wrapper {
+        padding: 10px !important;
+        font-size: 16px !important;
+    }
+    .bd-wrapper h1 {
+        font-size: 1.8em !important;
+        padding: 0.5em 0 !important;
+    }
+    .bd-wrapper h2 {
+        font-size: 1.4em !important;
+    }
+    .bd-wrapper h3 {
+        font-size: 1.2em !important;
+    }
+    .bd-wrapper section {
+        padding: 1em !important;
+        margin-bottom: 1em !important;
+    }
+    .bd-wrapper #toc {
+        padding: 1em !important;
+    }
+    .bd-wrapper nav {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .bd-wrapper nav a {
+        text-align: center !important;
+        padding: 0.75em !important;
+        margin: 0.25em 0 !important;
+    }
+    .bd-wrapper ol.roman > li,
+    .bd-wrapper ol.alpha > li {
+        padding-left: 2em !important;
+    }
+    .bd-wrapper .diagram {
+        padding: 0.5em !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .bd-wrapper h1 {
+        font-size: 1.5em !important;
+    }
+    .bd-wrapper h2 {
+        font-size: 1.2em !important;
+    }
+    .bd-wrapper section {
+        padding: 0.75em !important;
+    }
+    .bd-wrapper ol.roman > li,
+    .bd-wrapper ol.alpha > li {
+        padding-left: 1.5em !important;
+        font-size: 0.95em !important;
+    }
+}

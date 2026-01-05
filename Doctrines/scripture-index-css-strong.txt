@@ -1,0 +1,204 @@
+/* =================================================================
+   SCRIPTURE INDEX - Additional CSS (STRONGER SPECIFICITY)
+   Add this to WordPress → Appearance → Customize → Additional CSS
+   Replace the previous scripture index CSS with this version
+   ================================================================= */
+
+/* Wrapper for Scripture Index - extra strong specificity */
+body .si-wrapper,
+.entry-content .si-wrapper,
+.page-content .si-wrapper {
+    font-family: Georgia, serif !important;
+    line-height: 1.6 !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    min-height: 100vh !important;
+    border-radius: 8px !important;
+}
+
+body .si-wrapper h2,
+.entry-content .si-wrapper h2,
+.page-content .si-wrapper h2 {
+    color: #ffffff !important;
+    text-align: center !important;
+    font-size: 2.5em !important;
+    border-bottom: none !important;
+    padding: 1.5em 0 !important;
+    margin: 0 0 1em 0 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+body .si-wrapper .container,
+.entry-content .si-wrapper .container,
+.page-content .si-wrapper .container {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 2em !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2) !important;
+}
+
+body .si-wrapper .header-info,
+.entry-content .si-wrapper .header-info,
+.page-content .si-wrapper .header-info {
+    text-align: center !important;
+    margin-bottom: 2em !important;
+    padding: 1em !important;
+    background: linear-gradient(to right, #e0f2fe, #dbeafe) !important;
+    border-radius: 8px !important;
+    border-left: 4px solid #3b82f6 !important;
+}
+
+body .si-wrapper .header-info p,
+.entry-content .si-wrapper .header-info p,
+.page-content .si-wrapper .header-info p {
+    margin: 0.5em 0 !important;
+    color: #1e40af !important;
+    font-size: 1.1em !important;
+}
+
+body .si-wrapper table,
+.entry-content .si-wrapper table,
+.page-content .si-wrapper table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background-color: white !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+body .si-wrapper th,
+body .si-wrapper td,
+.entry-content .si-wrapper th,
+.entry-content .si-wrapper td,
+.page-content .si-wrapper th,
+.page-content .si-wrapper td {
+    padding: 14px !important;
+    text-align: left !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+body .si-wrapper th,
+.entry-content .si-wrapper th,
+.page-content .si-wrapper th {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: white !important;
+    font-weight: bold !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    text-transform: uppercase !important;
+    font-size: 0.9em !important;
+    letter-spacing: 0.05em !important;
+}
+
+body .si-wrapper tr:nth-child(even),
+.entry-content .si-wrapper tr:nth-child(even),
+.page-content .si-wrapper tr:nth-child(even) {
+    background-color: #f9fafb !important;
+}
+
+body .si-wrapper tr:hover,
+.entry-content .si-wrapper tr:hover,
+.page-content .si-wrapper tr:hover {
+    background-color: #eff6ff !important;
+    transform: scale(1.001) !important;
+    transition: all 0.2s ease !important;
+}
+
+body .si-wrapper td:first-child,
+.entry-content .si-wrapper td:first-child,
+.page-content .si-wrapper td:first-child {
+    font-weight: bold !important;
+    color: #1e40af !important;
+    font-size: 1.05em !important;
+}
+
+body .si-wrapper td:nth-child(2),
+.entry-content .si-wrapper td:nth-child(2),
+.page-content .si-wrapper td:nth-child(2) {
+    font-family: 'Courier New', monospace !important;
+    color: #3b82f6 !important;
+    font-weight: 600 !important;
+}
+
+body .si-wrapper td:nth-child(3),
+.entry-content .si-wrapper td:nth-child(3),
+.page-content .si-wrapper td:nth-child(3) {
+    font-style: italic !important;
+    color: #6b7280 !important;
+    font-size: 0.95em !important;
+}
+
+body .si-wrapper td:nth-child(4),
+.entry-content .si-wrapper td:nth-child(4),
+.page-content .si-wrapper td:nth-child(4) {
+    color: #4b5563 !important;
+}
+
+body .si-wrapper a,
+.entry-content .si-wrapper a,
+.page-content .si-wrapper a {
+    color: #2563eb !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
+
+body .si-wrapper a:hover,
+.entry-content .si-wrapper a:hover,
+.page-content .si-wrapper a:hover {
+    background-color: #dbeafe !important;
+    color: #1e40af !important;
+}
+
+body .si-wrapper .back-link,
+.entry-content .si-wrapper .back-link,
+.page-content .si-wrapper .back-link {
+    display: inline-block !important;
+    margin-bottom: 1.5em !important;
+    padding: 0.75em 1.5em !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+body .si-wrapper .back-link:hover,
+.entry-content .si-wrapper .back-link:hover,
+.page-content .si-wrapper .back-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4) !important;
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+}
+
+@media (max-width: 1024px) {
+    body .si-wrapper, .entry-content .si-wrapper, .page-content .si-wrapper { padding: 15px !important; }
+    body .si-wrapper .container, .entry-content .si-wrapper .container, .page-content .si-wrapper .container { padding: 1.5em !important; }
+    body .si-wrapper h2, .entry-content .si-wrapper h2, .page-content .si-wrapper h2 { font-size: 2em !important; padding: 1em 0 !important; }
+    body .si-wrapper table, .entry-content .si-wrapper table, .page-content .si-wrapper table { font-size: 0.95em !important; }
+}
+
+@media (max-width: 768px) {
+    body .si-wrapper, .entry-content .si-wrapper, .page-content .si-wrapper { padding: 10px !important; }
+    body .si-wrapper .container, .entry-content .si-wrapper .container, .page-content .si-wrapper .container { padding: 1em !important; }
+    body .si-wrapper h2, .entry-content .si-wrapper h2, .page-content .si-wrapper h2 { font-size: 1.6em !important; padding: 0.75em 0 !important; }
+    body .si-wrapper th, body .si-wrapper td, .entry-content .si-wrapper th, .entry-content .si-wrapper td, .page-content .si-wrapper th, .page-content .si-wrapper td { padding: 10px 8px !important; font-size: 0.9em !important; }
+    body .si-wrapper table, .entry-content .si-wrapper table, .page-content .si-wrapper table { display: block !important; overflow-x: auto !important; white-space: nowrap !important; }
+    body .si-wrapper thead, body .si-wrapper tbody, body .si-wrapper tr, body .si-wrapper th, body .si-wrapper td,
+    .entry-content .si-wrapper thead, .entry-content .si-wrapper tbody, .entry-content .si-wrapper tr, .entry-content .si-wrapper th, .entry-content .si-wrapper td,
+    .page-content .si-wrapper thead, .page-content .si-wrapper tbody, .page-content .si-wrapper tr, .page-content .si-wrapper th, .page-content .si-wrapper td { display: table-cell !important; }
+    body .si-wrapper .header-info, .entry-content .si-wrapper .header-info, .page-content .si-wrapper .header-info { font-size: 0.9em !important; }
+}
+
+@media (max-width: 480px) {
+    body .si-wrapper h2, .entry-content .si-wrapper h2, .page-content .si-wrapper h2 { font-size: 1.4em !important; }
+    body .si-wrapper th, body .si-wrapper td, .entry-content .si-wrapper th, .entry-content .si-wrapper td, .page-content .si-wrapper th, .page-content .si-wrapper td { padding: 8px 5px !important; font-size: 0.85em !important; }
+    body .si-wrapper .back-link, .entry-content .si-wrapper .back-link, .page-content .si-wrapper .back-link { padding: 0.6em 1em !important; font-size: 0.9em !important; }
+    body .si-wrapper .header-info p, .entry-content .si-wrapper .header-info p, .page-content .si-wrapper .header-info p { font-size: 0.95em !important; }
+}
