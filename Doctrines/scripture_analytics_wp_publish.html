@@ -129,7 +129,7 @@ For detailed setup instructions, see:
 <div class="analytics-wrapper">
 <h2>📊 Scripture Analytics Dashboard</h2>
 <div class="container">
-    <a href="https://intelligencereport.info/complete-library-of-christian-doctrine/" class="back-link">← Back to Doctrines Library</a>
+    <a href="https://intelligencereport.info/bible-doctrines/" class="back-link">← Back to Doctrines Library</a>
     
     <div class="stat-box">
         <h3>Overview Statistics</h3>
@@ -274,6 +274,15 @@ For detailed setup instructions, see:
     tooltip.className = 'verse-tooltip';
     document.body.appendChild(tooltip);
     
+    // ESV API Configuration
+    const API_CONFIG = {
+        esv: {
+            enabled: true,
+            key: '2ff0f1743ba8fc2e6ccb4e8c941970cd44c5e465',
+            baseUrl: 'https://api.esv.org/v3/passage/text/'
+        }
+    };
+    
     // Cache for verse texts to avoid repeated API calls
     const verseCache = {};
     
@@ -307,29 +316,67 @@ For detailed setup instructions, see:
         return text;
     }
     
-    // Get verse text (simulated - in production would use Bible API)
-    function getVerseText(reference) {
-        return new Promise((resolve) => {
-            // Check cache first
-            if (verseCache[reference]) {
-                resolve(verseCache[reference]);
-                return;
+    // Get verse text from ESV API
+    async function getVerseText(reference) {
+        // Check cache first
+        if (verseCache[reference]) {
+            return verseCache[reference];
+        }
+        
+        // If API not configured, return placeholder
+        if (!API_CONFIG.esv.enabled || !API_CONFIG.esv.key) {
+            const placeholderText = {
+                text: "Hover preview available with API key. Click to view full verse on ESV.org",
+                reference: reference,
+                cached: false
+            };
+            verseCache[reference] = placeholderText;
+            return placeholderText;
+        }
+        
+        // Make API request
+        try {
+            const url = API_CONFIG.esv.baseUrl + '?' + new URLSearchParams({
+                q: reference,
+                'include-headings': 'false',
+                'include-footnotes': 'false',
+                'include-verse-numbers': 'false',
+                'include-short-copyright': 'false',
+                'include-passage-references': 'false'
+            });
+            
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `Token ${API_CONFIG.esv.key}`
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error('API request failed');
             }
             
-            // Simulate API delay
-            setTimeout(() => {
-                // In production, this would be an actual API call to ESV API or Bible Gateway
-                // For now, we'll show a message indicating where to get the API
-                const verseText = {
-                    text: "Hover preview available with API key. Click to view full verse on ESV.org",
-                    reference: reference,
-                    cached: false
-                };
-                
-                verseCache[reference] = verseText;
-                resolve(verseText);
-            }, 100);
-        });
+            const data = await response.json();
+            const verseText = {
+                text: data.passages[0]?.trim() || 'Verse not found',
+                reference: reference,
+                version: 'ESV',
+                cached: false
+            };
+            
+            // Cache the result
+            verseCache[reference] = verseText;
+            return verseText;
+            
+        } catch (error) {
+            console.warn('ESV API fetch failed:', error);
+            const fallbackText = {
+                text: "Could not load verse. Click to view on ESV.org",
+                reference: reference,
+                cached: false
+            };
+            verseCache[reference] = fallbackText;
+            return fallbackText;
+        }
     }
     
     // Position tooltip
