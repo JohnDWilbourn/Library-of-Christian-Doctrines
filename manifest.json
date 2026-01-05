@@ -1,0 +1,36 @@
+{
+  "name": "Complete Library of Christian Doctrines",
+  "short_name": "Doctrines",
+  "description": "Comprehensive Christian doctrines with scripture references",
+  "start_url": "/complete-library-of-christian-doctrine/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/wp-content/uploads/doctrine-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/uploads/doctrine-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "reference",
+    "books"
+  ],
+  "screenshots": [
+    {
+      "src": "/wp-content/uploads/doctrine-screenshot.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ]
+}
