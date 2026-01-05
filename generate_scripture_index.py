@@ -360,8 +360,8 @@ def generate_html_index(references):
     return '\n'.join(html)
 
 def main():
-    # Read doctrines_library.html
-    library_path = Path(__file__).parent / "Doctrines" / "doctrines_library.html"
+    # Read doctrines_library_wp_publish.html
+    library_path = Path(__file__).parent / "Doctrines" / "doctrines_library_wp_publish.html"
     with open(library_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
@@ -371,12 +371,18 @@ def main():
     # Generate HTML index
     html_index = generate_html_index(references)
     
-    # Write to file
-    output_path = Path(__file__).parent / "Doctrines" / "scripture_index_new.html"
-    with open(output_path, 'w', encoding='utf-8') as f:
+    # Write to both index files
+    output_publish = Path(__file__).parent / "Doctrines" / "scripture_index_wp_publish.html"
+    output_clean = Path(__file__).parent / "Doctrines" / "scripture_index_wp_clean.html"
+    
+    with open(output_publish, 'w', encoding='utf-8') as f:
+        f.write(html_index)
+    with open(output_clean, 'w', encoding='utf-8') as f:
         f.write(html_index)
     
-    print(f"Scripture index generated: {output_path}")
+    print(f"Scripture indexes generated:")
+    print(f"  - {output_publish}")
+    print(f"  - {output_clean}")
     print(f"Found {len(references)} books with references")
 
 if __name__ == "__main__":
