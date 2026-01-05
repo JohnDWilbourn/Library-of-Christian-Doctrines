@@ -263,8 +263,8 @@ def main():
     """Main execution."""
     print("Generating scripture analytics...")
     
-    # Extract references
-    html_file = 'Doctrines/doctrines_library_wp_clean.html'
+    # Extract references from publish file
+    html_file = 'Doctrines/doctrines_library_wp_publish.html'
     references = extract_scripture_references(html_file)
     print(f"✓ Extracted {len(references)} scripture references")
     
@@ -277,12 +277,18 @@ def main():
     # Generate HTML report
     html_output = generate_analytics_html(analytics)
     
-    # Save to file
-    output_file = 'Doctrines/scripture_analytics_wp.html'
-    with open(output_file, 'w', encoding='utf-8') as f:
+    # Save to both files
+    output_wp = 'Doctrines/scripture_analytics_wp.html'
+    output_publish = 'Doctrines/scripture_analytics_wp_publish.html'
+    
+    with open(output_wp, 'w', encoding='utf-8') as f:
+        f.write(html_output)
+    with open(output_publish, 'w', encoding='utf-8') as f:
         f.write(html_output)
     
-    print(f"\n✓ Analytics report saved to: {output_file}")
+    print(f"\n✓ Analytics reports saved:")
+    print(f"  - {output_wp}")
+    print(f"  - {output_publish}")
     print("\nTop 5 Most Cited Books:")
     for i, (book, count) in enumerate(analytics['most_cited_books'][:5], 1):
         print(f"  {i}. {book}: {count} references")
