@@ -1,0 +1,140 @@
+<!-- DIAGNOSTIC TEST - Paste this into WordPress Custom HTML Block -->
+<!-- This will test if JavaScript is working at all -->
+
+<div style="background: #1e293b; color: white; padding: 20px; margin: 20px 0; border-radius: 12px; font-family: monospace;">
+    <h2 style="color: #60a5fa; margin-top: 0;">🔍 JavaScript Diagnostic Test</h2>
+    
+    <div id="diagnosticResults" style="background: #0f172a; padding: 15px; border-radius: 8px; margin: 15px 0;">
+        <div style="color: #fbbf24; margin-bottom: 10px;">⏳ Running tests...</div>
+    </div>
+    
+    <button id="manualTestBtn" style="background: #10b981; color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">
+        Click to Test Manually
+    </button>
+    <div id="manualResult" style="margin-top: 10px; font-size: 18px; font-weight: bold;"></div>
+</div>
+
+<script>
+(function() {
+    const results = document.getElementById('diagnosticResults');
+    const manualResult = document.getElementById('manualResult');
+    
+    function log(message, status) {
+        const colors = {
+            'success': '#10b981',
+            'error': '#ef4444',
+            'warning': '#f59e0b',
+            'info': '#3b82f6'
+        };
+        const icons = {
+            'success': '✅',
+            'error': '❌',
+            'warning': '⚠️',
+            'info': 'ℹ️'
+        };
+        const line = document.createElement('div');
+        line.style.color = colors[status] || '#94a3b8';
+        line.style.padding = '5px 0';
+        line.textContent = `${icons[status] || '•'} ${message}`;
+        results.appendChild(line);
+    }
+    
+    function runDiagnostics() {
+        results.innerHTML = '<div style="color: #60a5fa; margin-bottom: 10px; font-weight: bold;">Running Diagnostics...</div>';
+        
+        // Test 1: Basic JavaScript execution
+        try {
+            log('Test 1: JavaScript is executing', 'success');
+        } catch (e) {
+            log('Test 1 FAILED: ' + e.message, 'error');
+        }
+        
+        // Test 2: DOM ready state
+        log('Test 2: Document readyState = ' + document.readyState, 'info');
+        
+        // Test 3: querySelector
+        try {
+            const testDiv = document.querySelector('#diagnosticResults');
+            if (testDiv) {
+                log('Test 3: querySelector works ✓', 'success');
+            } else {
+                log('Test 3: querySelector returned null', 'error');
+            }
+        } catch (e) {
+            log('Test 3 FAILED: ' + e.message, 'error');
+        }
+        
+        // Test 4: Check for main doctrines page elements
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        log(`Test 4: Found ${categoryButtons.length} category buttons`, categoryButtons.length > 0 ? 'success' : 'warning');
+        
+        const exportBtn = document.getElementById('exportMenuBtn');
+        log(`Test 5: Export button ${exportBtn ? 'found ✓' : 'NOT found'}`, exportBtn ? 'success' : 'warning');
+        
+        const crossRefPanel = document.getElementById('crossRefPanel');
+        log(`Test 6: Cross-ref panel ${crossRefPanel ? 'found ✓' : 'NOT found'}`, crossRefPanel ? 'success' : 'warning');
+        
+        const searchInput = document.getElementById('doctrineSearch');
+        log(`Test 7: Search input ${searchInput ? 'found ✓' : 'NOT found'}`, searchInput ? 'success' : 'warning');
+        
+        // Test 8: Event listener test
+        try {
+            const testBtn = document.getElementById('manualTestBtn');
+            if (testBtn) {
+                testBtn.addEventListener('click', function() {
+                    manualResult.style.color = '#10b981';
+                    manualResult.textContent = '✅ Event listeners work! Your interactive elements SHOULD work.';
+                    log('Test 8: Event listener fired successfully', 'success');
+                });
+                log('Test 8: Event listener attached to test button ✓', 'success');
+            }
+        } catch (e) {
+            log('Test 8 FAILED: ' + e.message, 'error');
+        }
+        
+        // Test 9: Check if category buttons have event listeners
+        if (categoryButtons.length > 0) {
+            // Try to add a test listener
+            try {
+                categoryButtons[0].addEventListener('click', function() {
+                    log('Category button clicked!', 'success');
+                }, {once: true});
+                log('Test 9: Can attach listeners to category buttons ✓', 'success');
+            } catch (e) {
+                log('Test 9 FAILED: Cannot attach listeners - ' + e.message, 'error');
+            }
+        }
+        
+        // Test 10: Console check
+        if (typeof console !== 'undefined' && console.log) {
+            console.log('=== DIAGNOSTIC TEST RUNNING ===');
+            console.log('Found ' + categoryButtons.length + ' category buttons');
+            console.log('Export button:', exportBtn);
+            console.log('Cross-ref panel:', crossRefPanel);
+            console.log('Search input:', searchInput);
+            log('Test 10: Console logging available (check F12)', 'info');
+        }
+        
+        // Final summary
+        const separator = document.createElement('div');
+        separator.style.borderTop = '2px solid #475569';
+        separator.style.margin = '15px 0';
+        results.appendChild(separator);
+        
+        if (categoryButtons.length === 0) {
+            log('⚠️ WARNING: This diagnostic is on a different page than the doctrines library', 'warning');
+            log('Copy the FULL doctrines_library_wp_publish.html file to WordPress', 'warning');
+        } else {
+            log('✅ All doctrines page elements found!', 'success');
+            log('If buttons still don\'t work, check browser console (F12) for errors', 'info');
+        }
+    }
+    
+    // Run diagnostics when script loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runDiagnostics);
+    } else {
+        runDiagnostics();
+    }
+})();
+</script>

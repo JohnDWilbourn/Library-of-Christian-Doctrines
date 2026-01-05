@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test - Bible Doctrines</title>
+</head>
+<body>
+    <h1>Interactive Elements Test</h1>
+    
+    <div style="margin: 20px; padding: 20px; border: 2px solid #ccc;">
+        <h2>Test 1: Simple Button</h2>
+        <button id="testBtn1" style="padding: 10px 20px; font-size: 16px;">Click Me (Test 1)</button>
+        <p id="result1" style="color: green; font-weight: bold;"></p>
+    </div>
+    
+    <div style="margin: 20px; padding: 20px; border: 2px solid #ccc;">
+        <h2>Test 2: With DOM Ready Wrapper</h2>
+        <button id="testBtn2" style="padding: 10px 20px; font-size: 16px;">Click Me (Test 2)</button>
+        <p id="result2" style="color: blue; font-weight: bold;"></p>
+    </div>
+    
+    <div style="margin: 20px; padding: 20px; border: 2px solid #ccc;">
+        <h2>Test 3: Category Button (Like Your Page)</h2>
+        <button class="category-btn" data-category="test" style="padding: 10px 20px; font-size: 16px; background: #3b82f6; color: white; border: none; cursor: pointer;">
+            Theology Proper (God)
+        </button>
+        <p id="result3" style="color: purple; font-weight: bold;"></p>
+    </div>
+    
+    <div style="margin: 20px; padding: 20px; border: 2px solid #ccc;">
+        <h2>Console Output</h2>
+        <p>Open browser console (F12) to see debug messages</p>
+        <div id="consoleOutput" style="background: #000; color: #0f0; padding: 10px; font-family: monospace; max-height: 200px; overflow-y: auto;"></div>
+    </div>
+
+    <!-- Test 1: Simple script (should work) -->
+    <script>
+        console.log('✓ Test 1 script loaded');
+        const btn1 = document.getElementById('testBtn1');
+        if (btn1) {
+            btn1.addEventListener('click', function() {
+                document.getElementById('result1').textContent = '✓ Test 1 Works! Simple script executed.';
+                console.log('✓ Test 1 button clicked');
+            });
+            console.log('✓ Test 1 button found and listener attached');
+        } else {
+            console.error('✗ Test 1 button NOT found');
+        }
+    </script>
+
+    <!-- Test 2: With DOM ready wrapper (like fixed version) -->
+    <script>
+        console.log('✓ Test 2 script loaded');
+        (function() {
+            function initScript() {
+                console.log('✓ Test 2 initScript called');
+                const btn2 = document.getElementById('testBtn2');
+                if (btn2) {
+                    btn2.addEventListener('click', function() {
+                        document.getElementById('result2').textContent = '✓ Test 2 Works! DOM-ready wrapper executed.';
+                        console.log('✓ Test 2 button clicked');
+                    });
+                    console.log('✓ Test 2 button found and listener attached');
+                } else {
+                    console.error('✗ Test 2 button NOT found');
+                }
+            }
+            
+            if (document.readyState === 'loading') {
+                console.log('⏳ Test 2 waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', initScript);
+            } else {
+                console.log('✓ Test 2 DOM already ready, executing immediately');
+                initScript();
+            }
+        })();
+    </script>
+
+    <!-- Test 3: Category button (exact copy from your doctrines page) -->
+    <script>
+        console.log('✓ Test 3 script loaded');
+        (function() {
+            function initScript() {
+                console.log('✓ Test 3 initScript called');
+                const categoryButtons = document.querySelectorAll('.category-btn');
+                console.log('✓ Test 3 found ' + categoryButtons.length + ' category buttons');
+                
+                categoryButtons.forEach((btn, index) => {
+                    btn.addEventListener('click', function() {
+                        const category = this.getAttribute('data-category');
+                        document.getElementById('result3').textContent = '✓ Test 3 Works! Category: ' + category;
+                        console.log('✓ Test 3 button clicked, category: ' + category);
+                    });
+                    console.log('✓ Test 3 listener attached to button ' + index);
+                });
+            }
+            
+            if (document.readyState === 'loading') {
+                console.log('⏳ Test 3 waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', initScript);
+            } else {
+                console.log('✓ Test 3 DOM already ready, executing immediately');
+                initScript();
+            }
+        })();
+    </script>
+    
+    <!-- Console logger -->
+    <script>
+        // Capture console output
+        const consoleOutput = document.getElementById('consoleOutput');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const line = document.createElement('div');
+            line.textContent = args.join(' ');
+            consoleOutput.appendChild(line);
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            const line = document.createElement('div');
+            line.style.color = '#f00';
+            line.textContent = '✗ ERROR: ' + args.join(' ');
+            consoleOutput.appendChild(line);
+        };
+        
+        console.log('=== JavaScript Test Page Loaded ===');
+        console.log('Document readyState: ' + document.readyState);
+    </script>
+</body>
+</html>
