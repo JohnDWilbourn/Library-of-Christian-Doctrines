@@ -37,6 +37,7 @@ DOCTRINE_HIERARCHY = {
         "Doctrine of Rebound",
         "Doctrine of Evil",
         "Doctrine of the Sin Unto Death",
+        "Devil's Seven",
     ],
     "Spiritual Life": [
         "Summary of the Doctrine of Mental Attitude",
@@ -45,11 +46,13 @@ DOCTRINE_HIERARCHY = {
         "Doctrine of Happiness",
         "Doctrine of Divine Guidance",
         "Doctrine of Repentance",
+        "Prayer",
     ],
     "Ecclesiology (Church)": [
         "Doctrine of Witnessing",
         "Doctrine of the Levitical Priesthood",
         "Summary of the Doctrine of Giving",
+        "Royal Family of God",
     ],
     "Discipline & Testing": [
         "Doctrine of Divine Discipline",
@@ -61,6 +64,9 @@ DOCTRINE_HIERARCHY = {
     ],
     "Eschatology & Prophecy": [
         "Doctrine of Days",
+    ],
+    "History": [
+        "Interpretations of History",
     ],
     "Apologetics": [
         "Science and the Bible",

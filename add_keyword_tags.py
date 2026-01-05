@@ -21,13 +21,14 @@ KEYWORD_CATEGORIES = {
     'Spiritual Growth': ['spiritual growth', 'maturity', 'edification', 'sanctification', 'gap', 'spiritual life'],
     'Divine Attributes': ['omnipotence', 'omniscience', 'omnipresence', 'sovereignty', 'eternal', 'immutable', 'divine essence'],
     'Prayer': ['prayer', 'pray', 'praying', 'intercession'],
-    'Angels': ['angel', 'angels', 'cherubim', 'seraphim', 'demon', 'demons', 'satan'],
+    'Angels': ['angel', 'angels', 'cherubim', 'seraphim', 'demon', 'demons', 'satan', 'devil'],
     'Priesthood': ['priest', 'priesthood', 'levitical', 'royal priesthood'],
     'Prophecy': ['prophecy', 'prophesy', 'prophecies', 'prophetic', 'future'],
     'Mental Attitude': ['mental attitude', 'thinking', 'mind', 'heart', 'soul', 'conscience', 'emotion'],
     'Divine Discipline': ['discipline', 'judgment', 'chastisement', 'warning discipline'],
     'Giving': ['giving', 'tithing', 'offerings', 'generosity', 'stewardship'],
     'Happiness': ['happiness', 'joy', 'contentment', 'blessing', 'prosperity'],
+    'History': ['history', 'historical', 'interpretation', 'interpretations', 'cyclical', 'linear', 'historical cycles'],
 }
 
 def extract_keywords_from_doctrine(text, title):
