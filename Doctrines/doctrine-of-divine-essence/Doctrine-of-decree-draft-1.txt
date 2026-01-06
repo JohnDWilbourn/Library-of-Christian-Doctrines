@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Doctrine of Divine Essence</title>
+<style>
+body { 
+font-family: Georgia, serif; 
+max-width: 900px; 
+margin: 2em auto; 
+line-height: 1.8;
+padding: 20px;
+}
+h1 { 
+text-align: center; 
+font-size: 2em; 
+margin-bottom: 1em;
+color: #2c5282;
+}
+h2 { 
+font-size: 1.6em; 
+margin-top: 2.5em;
+margin-bottom: 1em;
+color: #2d3748;
+border-bottom: 2px solid #4299e1;
+padding-bottom: 0.5em;
+}
+h3 { 
+font-size: 1.3em; 
+margin-top: 1.5em;
+margin-bottom: 0.8em;
+color: #2d3748;
+}
+ol.roman { 
+list-style-type: upper-roman; 
+margin: 1.5em 0;
+}
+ol.alpha { 
+list-style-type: upper-alpha; 
+padding-left: 2em; 
+margin: 1em 0;
+}
+ol.numeric {
+list-style-type: decimal;
+padding-left: 2em;
+margin: 1em 0;
+}
+ol.roman-toc {
+list-style-type: upper-roman;
+margin: 1.5em 0;
+}
+ol.alpha-toc {
+list-style-type: upper-alpha;
+padding-left: 2em;
+margin: 1em 0;
+}
+ol.lower-alpha {
+list-style-type: lower-alpha;
+padding-left: 2em;
+margin: 1em 0;
+}
+ol.upper-alpha {
+list-style-type: upper-alpha;
+padding-left: 2em;
+margin: 1em 0;
+}
+ol.lower-roman {
+list-style-type: lower-roman;
+padding-left: 2em;
+margin: 1em 0;
+}
+ol.decimal {
+list-style-type: decimal;
+padding-left: 2em;
+margin: 1em 0;
+}
+li { 
+margin-bottom: 1em; 
+}
+p { 
+margin: 0.8em 0; 
+}
+.page { 
+margin-bottom: 3em; 
+}
+.section {
+margin-bottom: 4em;
+}
+/* Responsive */
+@media (max-width: 768px) {
+body {
+padding: 10px;
+font-size: 16px;
+}
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+}
+</style>
+</head>
+<body>
+
+<div class="section">
+<div class="appendix-title">THE DOCTRINE OF<br>DIVINE ESSENCE</div>
+
+<div class="outline-subtitle">GENERAL OUTLINE OF THE DOCTRINE</div>
+
+<ol class="roman-toc">
+<li>God's Essential Being</li>
+<li>Definition</li>
+<li>God Reveals Himself</li>
+<li>The Concept of Divine Personality</li>
+<li>Self-Existence</li>
+<li>Divine Attributes Introduced</li>
+<li>The Attributes of God
+<ol class="alpha-toc">
+<li>Sovereignty</li>
+<li>Righteousness</li>
+<li>Justice</li>
+<li>Love</li>
+<li>Eternal Life</li>
+<li>Omnipresence</li>
+<li>Omniscience</li>
+<li>Omnipotence</li>
+<li>Immutability</li>
+<li>Veracity</li>
+</ol>
+</li>
+<li>Categories of Antitheistic Theories</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<div class="page-number">264</div>
+<div class="chapter-title">THE INTEGRITY OF GOD</div>
+
+<h1>THE DOCTRINE OF DIVINE ESSENCE</h1>
+
+<ol class="roman">
+<li>God's essential being can never be completely defined or grasped by finite humanity. In the limitless, perfect splendor and majesty of His absolute existence, He is truly incomparable (Isa. 55:8-9). Only as He reveals Himself to us in the Bible can we, in a limited way, comprehend His person and nature.</li>
+<li>Definition
+<ol class="upper-alpha">
+<li>Derived from the Greek noun οὐσία (ousia), “being, substance,” essence means inner or intrinsic nature, true substance, a person’s qualities or attributes. These essential qualities are invisible but manifested by a person’s expressed thoughts and actions.</li>
+<li>Essence is defined as the basic constituent of a thing, the intrinsic nature of something; that which underlies all outward manifestations and is both permanent and unchangeable, as contrasted to what is accidental, ephemeral, or superficial. Essence implies being or existence and identity.</li>
+<li>God’s essence refers to His qualities and perfections which are classified as attributes and have always existed: sovereignty, righteousness, justice, love, eternal life, omniscience, omnipotence, omnipresence, immutability, and veracity. The sum total of God’s attributes is His essence.</li>
+<li>Essence is what remains stable in change. Therefore, without essence, a thing would not be what it actually is. Without God having essence, God would not be God.</li>
+<li>God exists and the attributes which belong to His essence are expressed by what He has created (Rom. 1:20), by His activities in human history, and by His infallible Word (John 1:1).</li>
+<li>God is a spirit (John 4:24). His essential being is a spiritual entity. The Greek noun πνεῦμα (pneuma), “spirit,” means “breath,” something invisible but real; spirit therefore means that God is invisible but real.</li>
+<li>Since God is a spirit, His attributes are invisible to the human eye. His qualities cannot be perceived by empiricism or by rationalism; they can, however, be understood through a third system of perception called faith.</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p><span class="letter">H.</span> The Creator is immaterial; in contrast, His rational creatures are a combination of material and immaterial—body and soul (2 Cor. 4:7, 16). Even though God is immaterial and invisible, this does not keep Him from being even more real than visible, material things. Although His attributes are invisible, His qualities are clearly revealed in creation and the natural world so that no human being has an excuse for denying God’s existence or rejecting the work of Jesus Christ as Savior (Rom. 1:20-21).</p>
+
+<p><span class="letter">I.</span> All the attributes of divine essence are present in God, but all are not always manifest at the same time. This is illustrated by light. All the colors of the visible spectrum are resident in a ray of white light, but the individual colors are only seen under different circumstances of reflection and refraction.</p>
+
+<p><span class="letter">J.</span> When divine essence is the subject, God is revealed and studied as one. The Bible states that God is one (Deut. 6:4). The oneness of God, called His glory, is the identical essence or character in all three persons of the Godhead (John 10:30). In the unity of God, there is only one essence, one substance. Therefore, God is one in essence, three in persons.</p>
+
+<p><span class="letter">K.</span> When divine persons are the subject, God is revealed in three separate and distinct persons who are distinguished throughout the Scripture (Isa. 48:16; John 10:30; cf. Ps. 110:1; 2 Cor. 13:14; 1 Pet. 1:2). The word “Trinity” is used to express three persons in one Godhead. In the Trinity, there are three coequal, coinfinite, coeternal persons in one essence: the Father (1 Cor. 8:6; Eph. 1:3); the Son (John 10:30; 14:9; Col. 2:9); and the Holy Spirit (Ex. 31:3; Isa. 6:8-9; cf. Acts 28:25-26; Isa. 11:2; Jer. 31:31-34; cf. Heb. 10:15-17).</p>
+
+<p><span class="letter">L.</span> There is no subject more exalted to which the human mind can address itself than the contemplation and cognition of the person and character of God. It is not an inscrutable subject. The essence of God is the study of His being and His attributes. At no point does the believer feel his limitations more than when confronted with the responsibility of accurately recognizing the essence of God. Yet God’s</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Integrity of God</h1>
+
+<p>essence is revealed to be understood. Moses was commanded to remove his shoes because he stood on holy ground when confronted with the essence of God (Ex. 3:5).</p>
+
+<h2><span class="roman">III.</span> God Reveals Himself</h2>
+
+<p><span class="letter">A.</span> The attributes of God are only understood by us as God has revealed them to us in Scripture. The difficulty in the study of divine essence is that it brings the finite human mind into constant contemplation and concentration on the infinite.</p>
+
+<p><span class="letter">B.</span> To more fully understand the invisible, immaterial, infinite, unlimited essence of God, the believer is dependent upon the infallible Word of God—the canon of Scripture—and the filling of the Holy Spirit. There is no frame of reference in our character, or in the life of anyone we know, or in the entire human race that can help us understand or even properly illustrate the perfect character of God. It is totally beyond us, and while there is a parallel between the essence of God and the soul of man, the parallel is limited. The essence of God is unseen; man’s soul is unseen. God’s essence is real; man’s essence is real. Divine essence has many attributes such as sovereignty, righteousness, justice, love, eternal life, omniscience, omnipotence, omnipresence, immutability, and veracity; man’s soul has attributes such as self-consciousness, mentality, and volition. God’s being is invisible and real with attributes; beyond that there is no parallel between divine essence and the human soul.</p>
+
+<p><span class="letter">C.</span> God in grace has revealed Himself, and what is revealed of God’s essence is revealed to be understood through the ministry of the Holy Spirit. The believer can and must master the information God has provided regarding His attributes.</p>
+
+<h2><span class="roman">IV.</span> The Concept of Divine Personality</h2>
+
+<p><span class="letter">A.</span> Essence is not only what God is by way of His character, but what He is by way of His personality.</p>
+
+<p><span class="letter">B.</span> Mankind has personality because he is made in the image of God, that is, having real but invisible attributes (which, of course, are not the same as God’s attributes).</p>
+
+<p><span class="letter">C.</span> The statement that “God created man in His own image” (Gen. 1:27) does not imply that man was created as a duplication of God, to share either His deity or physical</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p>appearance. “God created man in His own image” connotes that man possesses all the attributes of personality, not that man possesses deity.</p>
+
+<p><span class="letter">D.</span> Man’s personality is based on the essence of his soul. The soul with its characteristics is internal; the personality is external. Personality is a manifestation of how the soul functions.</p>
+
+<p><span class="letter">E.</span> There are many people in the human race, but all have the same essence. We might say that mankind is one in essence but multitudinous in personality. The Trinity is one in essence but only three in personality. Each member of the Godhead is a personality.</p>
+
+<p><span class="letter">F.</span> While mankind is possessed of the essential elements of personality and is capable of their normal exercise within a limited sphere, God is the source and embodiment of these essential elements which He possesses in the sphere of infinity and to an unlimited degree.</p>
+
+<p><span class="letter">G.</span> Nearly every page of the Bible asserts the personality of God. We derive our understanding of the personality of God from the manifestation of various combinations of His attributes throughout the Word of God.</p>
+
+<p><span class="letter">H.</span> God designs, executes, and empowers; these are activities of His personality.</p>
+
+<p><span class="letter">I.</span> God thinks and makes decisions. These are activities of the person of God, the superstructure of His essence.</p>
+
+<p><span class="letter">J.</span> The most basic parts of personality are self-consciousness and self-determination. One must first be aware that he exists, then he can make decisions in relationship to that awareness.</p>
+
+<ol class="lower-alpha">
+<li>God speaks of Himself as “I” or “I, even I” many times in Scripture (Gen. 6:17; Ex. 20:2; Lev. 26:28; Isa. 43:11, 25). Therefore, God is self-conscious.</li>
+<li>God expresses His thoughts, desires, and decisions, therefore He has self-determination (Ex. 20:2–17; Isa. 55:8–9).</li>
+</ol>
+
+<p><span class="letter">K.</span> God recognizes Himself to be a person, and as such He acts with perfect integrity and perfect rationality. Personality should have integrity and perfect rationality. Personality means you think, and integrity means you apply what</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Integrity of God</h1>
+
+<p>you think. God is perfect integrity and eternal virtue, which the Bible calls holiness.</p>
+
+<p><span class="letter">L.</span> God’s personality is always consistent. He does not change. God is not going to adjust in the least to our personalities. We adjust to Him. God is infinite personality; we are finite personality. The infinite never adjusts to the finite.</p>
+
+<p><span class="letter">M.</span> Man possesses to a limited degree self-consciousness and self-determination. We are therefore capable of having a definite and permanent relationship with God on the basis of grace.</p>
+
+<p><span class="letter">N.</span> God’s absolute will and absolute perfection characterize His motivation and design as well as execution (Eph. 1:9, 11).</p>
+
+<p><span class="letter">O.</span> God is, to an absolute degree, all that constitutes personality.</p>
+
+<p><span class="letter">P.</span> God knows Himself to be beyond any comparison with creatures. He never feels threatened by any creature or situation. God has absolute self-respect. This self-respect is not arrogance; it is perfect personality far beyond our imperfect status.</p>
+
+<p><span class="letter">Q.</span> Knowledge is always a part of the personality of anyone. Since God knows everything, His knowledge is absolute and part of His personality (Isa. 44:6; 45:5–6; 1 Tim. 1:17).</p>
+
+<p><span class="letter">R.</span> The divine motive is for His own glory, not for self-praise. This is not arrogance; this is perfectly compatible with His infinite attributes. God recognizes His own glory, and claims His glory in the interest of absolute truth.</p>
+
+<p><span class="letter">S.</span> Therefore, all things exist for the glory of God. Apart from this fact all things would not exist; because of this they do (Ex. 33:18; Ps. 19:1; Isa. 6:3; Matt. 6:13; Acts 7:2; Rom. 1:23; 9:23; Heb. 1:3; 1 Pet. 4:14).</p>
+
+<p><span class="letter">T.</span> We derive our understanding of the personality of God from His self-revelation of His attributes throughout the infallible Word of God.</p>
+
+<h2><span class="roman">V.</span> Self-Existence</h2>
+
+<p><span class="letter">A.</span> God exists eternally, unsustained by Himself or by any other source. God has no beginning. His Old Testament name, יהוה (YHWH), Yahweh, means “the self-existent One.” He is the source of sustaining but does not need to</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p>be sustained Himself. In other words, He eternally exists as an infinite person who does not need help from anyone. We, on the other hand, must have help from Him, since He is the infinite source with infinite capacity. He provides for our needs.</p>
+
+<p><span class="letter">B.</span> God’s existence is unalterable. That is why we adjust to Him and He does not adjust to us. Moreover, He is the cause of all existence outside Himself, but He has no cause for Himself. By application of this principle, if God is the source of all energy and caused us to receive His life, He has infinite ability to supply us some of His energy. The source of the energy with which you are thinking right now is God.</p>
+
+<p><span class="letter">C.</span> We, as believers, have an eternal relationship with God, and there is no higher relationship in the universe. There is nothing beyond God—relationship with Him is the peak. The Bible categorizes the personal relationships God has with men (Gen. 5:22–24; Ex. 33:11). When we made our first adjustment to His justice by believing in Christ, we entered into the perfect relationship. We are related to the One who has no origin and no cause. He is the cause, but He has no cause. He is, in addition, totally familiar with every secondary cause outside of Himself, which means that He has every attribute necessary to make Him the perfect Supreme Court Judge.</p>
+
+<h2><span class="roman">VI.</span> Divine Attributes Introduced</h2>
+
+<p><span class="letter">A.</span> Attributes are those qualities and perfections which belong to God; “the invisible things of Him [His attributes] . . . are clearly seen, being perspicuous by the things He has made [the act of creation is a function of God as a person]” (Rom. 1:20b, corrected translation). This phraseology portrays the personality of God and, behind His personality, its source in the attributes of His essence.</p>
+
+<p><span class="letter">B.</span> Since the grace of God and the work of God are manifestations of His essential qualities—His attributes, it is important to understand who and what God is (that is, to understand His attributes). Moreover, since Jesus Christ is God—the manifest person of the Godhead (John 1:18)—to understand Him we must understand divine essence. After</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Integrity of God</h1>
+
+<p>salvation we belong to God; therefore, we are designed to understand the thoughts and functions of God.</p>
+
+<h2><span class="roman">VII.</span> The Attributes of God</h2>
+
+<p><span class="letter">A.</span> Sovereignty</p>
+
+<ol class="lower-alpha">
+<li>The sovereignty of God is His eternal, infinite, unchangeable will expressed in the doctrine of the divine decree in eternity past.<sup>81</sup> As the Supreme Being of the universe (Deut. 4:39), the King of heaven and earth (Ps. 47:2; 93:1–2), God has absolute prerogative and volition.</li>
+<li>God is eternal (Ps. 93:2); God is infinite (Ps. 8:1; Acts 5:39; Heb. 6:13); God is self-determining (Job 9:12; Ps. 115:3; 135:6; Prov. 21:1; Dan. 4:35). Therefore, God’s sovereignty is eternal, infinite, and self-determining.</li>
+<li>By divine decree, the sovereignty of God and the free will of man coexist in human history. Both are invisible, though we can see their results (John 7:17; Phil. 2:13; 2 Pet. 3:9).</li>
+<li>God’s sovereign will from eternity past for the human race is expressed in Ephesians 1:5 (KJV), “Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will,” and in 2 Peter 3:9 (KJV), “The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</li>
+<li>The sovereignty of God in the Church Age is expressed in the corrected translation of Colossians 1:27, “To whom God willed to reveal to the Gentiles the glorious riches of this mystery, which is Christ in you, the hope of glory.” God sovereignly willed to every Church Age believer the unique spiritual life, and not only does He reveal to him the “riches” of that unique spiritual life, but Jesus Christ indwells</li>
+</ol>
+
+<p>81. See Appendix B.</p>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p>each Church Age believer as “the hope [confidence] of glory.”</p>
+
+<p><span class="letter">6.</span> The functions of divine sovereignty</p>
+
+<ol class="lower-alpha">
+<li>The sovereignty of God is the final cause of all things; He created and maintains the universe (Col. 1:15–16).</li>
+<li>The sovereign will of God decreed to reveal Himself to us through Bible doctrine (Heb. 4:12).</li>
+<li>The sovereign will of God decreed to deal with us through a policy of grace, and to give Church Age believers the most fantastic and unique plan ever provided to believers in any dispensation.</li>
+<li>The sovereignty of God the Father sent Jesus Christ to the cross to provide our eternal salvation (John 3:16).</li>
+<li>The sovereignty of God always operates for His own glory. Therefore, all things exist for the glory of God (Ex. 33:18; Ps. 19:1; Isa. 6:3; Matt. 6:13; Acts 7:2; Rom. 1:23; 9:23; Heb. 1:3; 1 Pet. 4:14).</li>
+<li>God has never made a bad decision. All divine decisions from the sovereignty of God are made from a position of eternal and infinite strength. All divine decisions are based on His eternal wisdom and omniscience. Therefore, it is impossible for God to make a wrong decision.</li>
+<li>God in His sovereignty expresses supreme rulership, wisdom, and grace in His decisions that relate to us. When it comes time for us to die, the time, manner, and place of our dying are determined by decisions from the sovereignty of God. God has never made a mistake or a bad decision with regard to our living, and He never makes a bad decision with regard to the time, manner, and place in which we depart from this life.</li>
+</ol>
+
+<p><span class="letter">7.</span> Principles related to the sovereignty of God</p>
+
+<ol class="lower-alpha">
+<li>The sovereignty of God functions in total compatibility with all His other attributes.</li>
+<li>The sovereignty of God works in conjunction with His omniscience. God has the wisdom to execute</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p>will. Any human attempt to live independently of God is the quintessence of arrogance.</p>
+
+<ol class="lower-alpha">
+<li>Under the sovereignty of God, any person who dies without reaching the point of accountability at God-consciousness is automatically saved because his free will has not yet had the opportunity to accept or reject Christ.</li>
+</ol>
+
+<p><span class="letter">8.</span> The authority of God</p>
+
+<ol class="lower-alpha">
+<li>God’s authority is derived from all His attributes.</li>
+<li>God has absolute authority over both the possible and the actual.</li>
+<li>Over possible things, God is sovereign in that He leaves them as merely possible or decrees them to become actual at a specific point in the future.</li>
+<li>God renders account to no one. He acts in conformity with His own perfect character and consults no one for advice or encouragement. He is perfect and cannot be less than perfect in any decision He makes.</li>
+<li>All forms of existence are within the scope of God’s dominion. God is the final and absolute Authority (Ps. 145:14; Matt. 20:15; 1 Tim. 6:15). God delegates and establishes systems of authority in the human race; we call these systems of delegated authority the laws of divine establishment. Designed for believers and unbelievers alike, these authorities are necessary for the perpetuation of the human race. For example, each individual holds the authority over himself in the function of self-discipline; this is the mechanics of using his God-given free volition. Likewise, in marriage, the man is in authority over the woman; in the family, parents are in authority over their children. Law and law enforcement, as well as the military, are systems of authority under the principle of national entity.</li>
+<li>The authority of God rests in three facts:
+<ol>
+<li>God is the Creator (Gen. 1:1–3). God gave existence to every creature and to all things;</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Integrity of God</h1>
+
+<p>therefore, His authority extends over all creation. In conjunction with His righteousness and justice, God in His sovereignty has the right to save or judge, reward or discipline. God is therefore compelled to discipline the reversionist who is under the influence of evil. He is also compelled to bless and reward the mature believer who is under the influence of doctrine. This exercise of authority is always consistent with His own essence and plan.</p>
+
+<p>The Creator’s absolute and sovereign ownership of all creation is contrasted with the secondary rights which men recognize in the ownership of private property under the laws of divine establishment. All the wealth of the world belongs to God (Ps. 50:10). Consistent with His will and perfect character, He can give blessings or remove them according to His personal handling of each individual as that person is adjusted or maladjusted to divine justice (Job 1:21).</p>
+
+<ol class="decimal">
+<li>God has redeemed us; He purchased us out of the slave market of sin. He freed us at the cross, giving us the right to choose for or against His plan of salvation and, subsequently, to choose for or against Bible doctrine. He bought us with a price; therefore, He has authority over us.</li>
+<li>God has provided Bible doctrine. The authority of God is expressed in doctrine, and our obedience to His authority is related to the amount of doctrine resident in our souls. When we submit to God’s authority, there is tremendous blessing, and when we reject His authority, tremendous cursing.</li>
+</ol>
+
+<p><span class="letter">9.</span> The freedom of God</p>
+
+<ol class="lower-alpha">
+<li>Freedom is not truly an attribute; God’s sovereignty is. The only restriction to the freedom of</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Doctrine of Divine Essence</h1>
+
+<p>God’s will is self-imposed to be consistent with all His other attributes.</p>
+
+<ol class="lower-alpha">
+<li>God must be consistent with Himself; He cannot compromise His essence.</li>
+<li>The incarnation and spiritual death of Christ was the only way the sovereignty of God could decree salvation for man. In other words, God is free to bless man only when man is adjusted to His justice, first of all at salvation, then at rebound, and finally at spiritual maturity.</li>
+</ol>
+
+<p><span class="letter">B.</span> Righteousness</p>
+
+<ol class="decimal">
+<li>God is perfect, both in His person and in His character, therefore all His attributes are perfect (Deut. 32:4; Ps. 7:9; 11:7; 97:6; 113:3; 119:137; Jer. 23:6; John 17:25; Rom. 1:17; 10:3; 1 John 2:29).</li>
+<li>God is totally free from sin. God cannot in any way be involved in sin except to judge it.</li>
+<li>God possesses eternal, unchangeable, and absolute righteousness. His righteousness in combination with His perfect justice is described as holiness or integrity (Ex. 15:11; 19:10–16; Isa. 6:3).</li>
+<li>Righteousness is the principle or standard of divine integrity. All that God does adheres to this measure of perfection.
+<ol class="lower-alpha">
+<li>God’s righteousness is perfect and demands perfect justice.</li>
+<li>What the righteousness of God demands, the justice of God executes.</li>
+</ol>
+</li>
+<li>Righteousness is the guardian of divine justice.</li>
+<li>All justice is administered from the perfect righteousness of God (Lev. 19:2; 1 Sam. 2:2; Ps. 22:3; 47:8; 119:9; John 17:11; Rev. 3:7; 4:8; 6:10).</li>
+<li>God is absolute good. This is not a moralistic good, not a legalistic good, not a distorted good from the sin nature perspective whereby man tries to impress God and people with how good he is. God’s absolute goodness is a good of intrinsic value that is perfect righteousness (Ps. 25:8; 34:8; 86:5; 119:68; Luke 18:19). God is infinitely perfect. He can neither be</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+<h1>The Integrity of God</h1>
+
+<p>tempted to sin, nor can He sin. Sin has boundaries, standards, and measures, but God is beyond standards and measures and therefore cannot sin. God cannot tempt anyone to sin, but He can recognize sin in us.</p>
+
+<ol class="decimal">
+<li>God cannot be complicated with ignorance or absurdities, any more than with temptation, sin, or the approval of sin.</li>
+<li>The intellect and character of God are perfect; His perfection involves absolute truth, love, justice, and righteousness.</li>
+<li>God’s very own righteousness is imputed to every believer at the moment of salvation (Gen. 15:6; 2 Cor. 5:21) as the target for blessing from God.</li>
+</ol>
+
+<p><span class="letter">C.</span> Justice</p>
+
+<ol class="decimal">
+<li>God is perfect justice: absolute and incorruptible fairness (Deut. 10:17; Rom. 2:11). It is impossible for God to be unfair in the function of divine justice.</li>
+<li>All three members of the Trinity sit in the Supreme Court of Heaven; therefore, justice involves all three persons of the Godhead. Divine justice administers the system of divine laws that are compatible with divine righteousness and sovereignty. Justice is the function of the integrity of God. As the Judge of mankind, God’s justice renders daily decisions in the Supreme Court of Heaven with regard to all members of the human race.</li>
+<li>God is an incorruptible and fair judge of mankind. It is impossible for perfect God to render a bad decision as judge.</li>
+<li>The justice of God administers the penalties and blessings which are demanded by His perfect righteousness (Deut. 32:4; 2 Chron. 19:7; Job 37:23; Ps. 19:9; 50:6; 58:11; 89:14; Isa. 45:21; Jer. 50:7; Rom. 3:26; Heb. 10:30–31; 12:23).</li>
+<li>God’s penalties are not vindictive but vindicative. With unchangeable sin and evil there is unchangeable condemnation and judgment; thus, God is proven to be consistent.</li>
+</ol>
+</div>
+
+<hr style="margin: 3em 0; border: none; border-top: 1px solid #cbd5e0;">
+
+<div class="section">
+
