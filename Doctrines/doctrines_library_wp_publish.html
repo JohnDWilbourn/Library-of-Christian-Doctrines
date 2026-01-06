@@ -39,6 +39,9 @@ For detailed setup instructions, see:
 ============================================================
 -->
 
+<!-- CRITICAL: Viewport for proper mobile rendering -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
 <!-- PWA Support -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#3b82f6">
@@ -52,10 +55,10 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
       .then(registration => {
-        console.log('✓ Service Worker registered:', registration.scope);
+        // console.log('✓ Service Worker registered:', registration.scope);
       })
       .catch(error => {
-        console.log('Service Worker registration failed:', error);
+        // console.log('Service Worker registration failed:', error);
       });
   });
 }
@@ -112,7 +115,7 @@ function createInstallButton() {
     
     // Wait for the user's response
     const { outcome } = await deferredPrompt.userChoice;
-    console.log(`PWA install outcome: ${outcome}`);
+    // console.log(`PWA install outcome: ${outcome}`);
     
     // Clear the deferred prompt
     deferredPrompt = null;
@@ -153,7 +156,7 @@ function createInstallButton() {
 
 // Handle successful installation
 window.addEventListener('appinstalled', () => {
-  console.log('✓ PWA installed successfully');
+  // console.log('✓ PWA installed successfully');
   deferredPrompt = null;
   if (installButton) {
     installButton.remove();
@@ -161,62 +164,56 @@ window.addEventListener('appinstalled', () => {
   }
 });
 
-// Offline/Online detection
+// Offline/Online detection disabled - no visible notifications
 window.addEventListener('online', () => {
-  console.log('✓ Back online');
-  showNotification('Back online!', 'success');
+  // console.log('✓ Back online');
 });
 
 window.addEventListener('offline', () => {
-  console.log('⚠ Offline mode');
-  showNotification('Offline - using cached content', 'warning');
+  // console.log('⚠ Offline mode');
 });
 
-function showNotification(message, type = 'info') {
-  const notification = document.createElement('div');
-  notification.textContent = message;
-  notification.style.cssText = `
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: ${type === 'success' ? '#10b981' : type === 'warning' ? '#f59e0b' : '#3b82f6'};
-    color: white;
-    padding: 1em 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 10001;
-    animation: slideDown 0.3s ease;
-  `;
-  
-  const animStyle = document.createElement('style');
-  animStyle.textContent = `
-    @keyframes slideDown {
-      from { transform: translate(-50%, -100px); opacity: 0; }
-      to { transform: translate(-50%, 0); opacity: 1; }
-    }
-  `;
-  document.head.appendChild(animStyle);
-  
-  document.body.appendChild(notification);
-  
-  setTimeout(() => {
-    notification.style.animation = 'slideDown 0.3s ease reverse';
-    setTimeout(() => notification.remove(), 300);
-  }, 3000);
-}
-
-console.log('✓ PWA support enabled');
-console.log('  - Can be installed as app');
-console.log('  - Offline caching available');
-console.log('  - Works on mobile and desktop');
+// console.log('✓ PWA support enabled');
+// console.log('  - Can be installed as app');
+// console.log('  - Offline caching available');
+// console.log('  - Works on mobile and desktop');
 </script>
 
+<!-- Hide WordPress auto-generated title -->
+<style>
+.entry-title, .page-title, h1.entry-title, .wp-block-post-title {
+    display: none !important;
+}
+</style>
+
+<h1 style="color: #1a202c !important; text-align: center !important; font-size: 2.5em !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.2) !important; padding: 1em 0 !important; margin: 0 0 0.5em 0 !important; font-weight: 700 !important;">
+    Complete Library of Christian Doctrines
+</h1>
+
+<!-- Dark mode support for title -->
+<style>
+@media (prefers-color-scheme: dark) {
+    h1[style*="Complete Library"] {
+        color: #f7fafc !important;
+        text-shadow: 2px 2px 12px rgba(255,255,255,0.3), 0 0 20px rgba(147,197,253,0.4) !important;
+    }
+}
+</style>
+
 <div class="bd-wrapper">
-<h1>Complete Library of Christian Doctrines</h1>
+
+<!-- Cross-Page Navigation -->
+<div style="margin: 1.5em 0; padding: 1em; background: linear-gradient(to right, #eff6ff, #dbeafe); border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);">
+    <div style="display: inline-flex; gap: 1em; flex-wrap: wrap; justify-content: center; align-items: center;">
+        <span style="font-weight: 600; color: #1e40af; padding: 0.5em 1em; background: white; border-radius: 8px; border: 2px solid #3b82f6;">📖 Doctrines Library</span>
+        <a href="https://intelligencereport.info/comprehensive-biblical-reference-guide/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3); transition: all 0.2s ease;">📑 Scripture Index</a>
+        <a href="https://intelligencereport.info/scripture-analytics/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3); transition: all 0.2s ease;">📊 Analytics</a>
+    </div>
+</div>
+
 <div class="search-container" style="margin: 2em 0; text-align: center;">
 <input id="doctrineSearch" placeholder="🔍 Search doctrines and scriptures..." style="width: 80%; max-width: 600px; padding: 12px 20px; font-size: 16px; border: 2px solid #3b82f6; border-radius: 25px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2); transition: all 0.3s ease; outline: none;" type="text"/>
-<div id="searchResults" style="margin-top: 1em; text-align: center; color: #6b7280; font-style: italic;"></div>
+<div id="searchResults" style="margin-top: 1em; text-align: center; font-style: italic;"></div>
 </div>
 <div class="hierarchy-nav" style="margin: 2em 0; padding: 1.5em; background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 <h3 style="margin-top: 0; color: #1e40af; font-size: 1.3em; margin-bottom: 1em;">📚 Doctrine Categories</h3>
@@ -307,6 +304,153 @@ console.log('  - Works on mobile and desktop');
 .category-content.collapsed {
     display: none;
 }
+
+/* Explicit Light Mode - Default Styling */
+body {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.bd-wrapper {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+section {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+section h2 {
+    color: #1f2937;
+}
+
+section p, section li, section ol, section ul {
+    color: #1f2937;
+}
+
+/* Search Results Styling */
+#searchResults {
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: 0.5em;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#searchResults.search-success {
+    color: #059669;
+    background: #d1fae5;
+}
+
+#searchResults.search-error {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1f2937;
+        color: #f3f4f6;
+    }
+    
+    .bd-wrapper {
+        background-color: #1f2937;
+        color: #f3f4f6;
+    }
+    
+    .hierarchy-nav {
+        background: #374151 !important;
+    }
+    
+    .hierarchy-nav h3 {
+        color: #93c5fd !important;
+    }
+    
+    .category-section {
+        background: linear-gradient(to right, #374151, #4b5563) !important;
+        color: #f3f4f6;
+    }
+    
+    .category-header {
+        background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%) !important;
+    }
+    
+    section {
+        background-color: #374151;
+        color: #f3f4f6;
+    }
+    
+    section h2 {
+        color: #e0e7ff;
+    }
+    
+    a {
+        color: #60a5fa;
+    }
+    
+    a:hover {
+        color: #93c5fd;
+    }
+    
+    /* Search results - enhanced contrast for dark mode */
+    #searchResults.search-success {
+        color: #6ee7b7;
+        background: #064e3b;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(110, 231, 183, 0.3);
+    }
+    
+    #searchResults.search-error {
+        color: #fca5a5;
+        background: #7f1d1d;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(252, 165, 165, 0.3);
+    }
+    
+    .cross-ref-panel {
+        background: #1f2937 !important;
+        color: #f3f4f6;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .cross-ref-item {
+        background: #374151 !important;
+        border-color: #4b5563 !important;
+    }
+    
+    .cross-ref-item:hover {
+        background: #4b5563 !important;
+    }
+    
+    .export-options {
+        background: #374151 !important;
+    }
+    
+    .export-option-btn {
+        color: #f3f4f6;
+    }
+    
+    .export-option-btn:hover {
+        background: #4b5563 !important;
+    }
+}
+
+/* Light Mode - Explicit styling for better visibility */
+@media (prefers-color-scheme: light) {
+    #searchResults.search-success {
+        color: #047857;
+        background: #d1fae5;
+        font-weight: 600;
+    }
+    
+    #searchResults.search-error {
+        color: #b91c1c;
+        background: #fee2e2;
+        font-weight: 600;
+    }
+}
 </style>
 <script>
 // WordPress-safe DOM ready wrapper
@@ -378,7 +522,7 @@ console.log('  - Works on mobile and desktop');
         });
     });
     
-    console.log('✓ Doctrine hierarchy navigation enabled');
+    // console.log('✓ Doctrine hierarchy navigation enabled');
     }
     
     // Execute when DOM is ready
@@ -497,7 +641,7 @@ console.log('  - Works on mobile and desktop');
         });
     });
     
-    console.log('✓ Keyword tagging system enabled with 18 categories');
+    // console.log('✓ Keyword tagging system enabled with 18 categories');
     }
     
     // Execute when DOM is ready
@@ -564,12 +708,13 @@ console.log('  - Works on mobile and desktop');
         // Update results text
         if (visibleCount === 0) {
             searchResults.textContent = 'No doctrines found matching "' + this.value + '"';
-            searchResults.style.color = '#ef4444';
+            searchResults.className = 'search-error';
         } else if (visibleCount === sections.length) {
             searchResults.textContent = '';
+            searchResults.className = '';
         } else {
             searchResults.textContent = 'Found ' + visibleCount + ' doctrine(s) matching "' + this.value + '"';
-            searchResults.style.color = '#10b981';
+            searchResults.className = 'search-success';
         }
     });
     
@@ -3295,7 +3440,7 @@ console.log('  - Works on mobile and desktop');
         link.addEventListener('mouseleave', hideTooltip);
     });
     
-    console.log(`✓ Verse preview enabled for ${scriptureLinks.length} scripture references`);
+    // console.log(`✓ Verse preview enabled for ${scriptureLinks.length} scripture references`);
     }
     
     // Execute when DOM is ready
@@ -3401,9 +3546,32 @@ console.log('  - Works on mobile and desktop');
     transition: width 0.3s ease;
 }
 @media print {
-    .export-menu, .search-container, .tag-filter-container, .hierarchy-nav {
+    .export-menu, .search-container, .tag-filter-container, .hierarchy-nav, .doctrine-export-btn {
         display: none !important;
     }
+}
+.doctrine-export-btn {
+    float: right;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s ease;
+    margin-left: 1em;
+}
+.doctrine-export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+section > h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 </style>
 
@@ -3436,6 +3604,7 @@ console.log('  - Works on mobile and desktop');
         <div class="progress-fill" id="progressFill"></div>
     </div>
     <div style="font-size: 0.9em; color: #6b7280;" id="progressText">Preparing export...</div>
+</div>
 
 <style>
 .cross-ref-panel {
@@ -3480,6 +3649,10 @@ console.log('  - Works on mobile and desktop');
     margin-bottom: 1em;
     padding-bottom: 1em;
     border-bottom: 2px solid #e5e7eb;
+}
+#crossRefContent {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
 }
 .cross-ref-close {
     background: none;
@@ -3532,6 +3705,20 @@ console.log('  - Works on mobile and desktop');
         width: 100%;
         right: -100%;
     }
+    .cross-ref-toggle {
+        bottom: 20px;
+        right: 10px;
+        padding: 0.8em 1.2em;
+        font-size: 0.9em;
+        z-index: 10000;
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.3);
+    }
+    .cross-ref-panel.open {
+        right: 0;
+    }
+    #crossRefContent {
+        max-height: calc(100vh - 100px);
+    }
 }
 </style>
 
@@ -3575,9 +3762,23 @@ console.log('  - Works on mobile and desktop');
     
     // Show cross-references for a verse
     function showCrossReferences(verse) {
-        currentVerse = verse;
-        const refs = crossRefData[verse];
-        const doctrines = doctrineData[verse] || [];
+        try {
+            // Debug logging
+            // console.log('showCrossReferences called with:', verse);
+            // console.log('typeof crossRefData:', typeof crossRefData);
+            // console.log('typeof doctrineData:', typeof doctrineData);
+            
+            if (!crossRefData || !doctrineData) {
+                console.error('Data objects not loaded!');
+                content.innerHTML = '<div class="cross-ref-empty">Error: Data not loaded</div>';
+                return;
+            }
+            
+            // console.log('crossRefData has this verse:', crossRefData.hasOwnProperty(verse));
+            
+            currentVerse = verse;
+            const refs = crossRefData[verse];
+            const doctrines = doctrineData[verse] || [];
         
         if (!refs || refs.length === 0) {
             content.innerHTML = `
@@ -3616,6 +3817,10 @@ console.log('  - Works on mobile and desktop');
         
         // Scroll to top of panel
         panel.scrollTop = 0;
+        } catch (error) {
+            console.error('Error in showCrossReferences:', error);
+            content.innerHTML = `<div class="cross-ref-empty">Error: ${error.message}</div>`;
+        }
     }
     
     // Add click handlers to all scripture links
@@ -3624,11 +3829,25 @@ console.log('  - Works on mobile and desktop');
         if (link) {
             const verse = link.textContent.trim();
             if (crossRefData[verse]) {
+                e.preventDefault();
                 showCrossReferences(verse);
                 panel.classList.add('open');
             }
         }
     });
+    
+    // Add touch event support for mobile
+    document.addEventListener('touchend', (e) => {
+        const link = e.target.closest('a[href*="esv.org"], a[href*="biblegateway"]');
+        if (link) {
+            const verse = link.textContent.trim();
+            if (crossRefData[verse]) {
+                e.preventDefault();
+                showCrossReferences(verse);
+                panel.classList.add('open');
+            }
+        }
+    }, { passive: false });
     
     // Also listen for verse link hovers
     const scriptureLinks = document.querySelectorAll('a[href*="esv.org"], a[href*="biblegateway"]');
@@ -3645,11 +3864,9 @@ console.log('  - Works on mobile and desktop');
     // Expose function globally
     window.showCrossReferences = showCrossReferences;
     
-    console.log(`✓ Cross-reference engine enabled with ${Object.keys(crossRefData).length} verses`);
+    // console.log(`✓ Cross-reference engine enabled with ${Object.keys(crossRefData).length} verses`);
 })();
 </script>
-
-</div>
 
 <script>
 // WordPress-safe DOM ready wrapper
@@ -3822,7 +4039,81 @@ console.log('  - Works on mobile and desktop');
         URL.revokeObjectURL(url);
     };
     
-    console.log('✓ PDF export functionality enabled');
+    // console.log('✓ PDF export functionality enabled');
+    
+    // Add export buttons to each doctrine
+    window.exportIndividualDoctrine = function(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        
+        const h2 = section.querySelector('h2');
+        const doctrineName = h2 ? h2.textContent.replace(/📥.*$/, '').trim() : 'Doctrine';
+        
+        // Create a temporary container with just this doctrine
+        const tempDiv = document.createElement('div');
+        tempDiv.style.padding = '40px';
+        tempDiv.style.maxWidth = '800px';
+        tempDiv.style.margin = '0 auto';
+        
+        // Add title
+        const title = document.createElement('h1');
+        title.textContent = doctrineName;
+        title.style.marginBottom = '2em';
+        tempDiv.appendChild(title);
+        
+        // Clone the section content
+        const clonedContent = section.cloneNode(true);
+        // Remove the export button from the clone
+        const exportBtn = clonedContent.querySelector('.doctrine-export-btn');
+        if (exportBtn) exportBtn.remove();
+        // Remove the h2 since we added it as h1
+        const h2Clone = clonedContent.querySelector('h2');
+        if (h2Clone) h2Clone.remove();
+        
+        tempDiv.appendChild(clonedContent);
+        
+        // Save current page content
+        const originalContent = document.body.innerHTML;
+        const originalTitle = document.title;
+        
+        // Replace page content
+        document.body.innerHTML = tempDiv.outerHTML;
+        document.title = doctrineName;
+        
+        // Print
+        window.print();
+        
+        // Restore original content
+        setTimeout(() => {
+            document.body.innerHTML = originalContent;
+            document.title = originalTitle;
+            // Reinitialize scripts after restoring content
+            location.reload();
+        }, 500);
+    };
+    
+    // Add export buttons to all doctrine sections
+    function addExportButtons() {
+        const sections = document.querySelectorAll('section[id]');
+        sections.forEach(section => {
+            const h2 = section.querySelector('h2');
+            if (h2 && !h2.querySelector('.doctrine-export-btn')) {
+                const btn = document.createElement('button');
+                btn.className = 'doctrine-export-btn';
+                btn.innerHTML = '📥 Export';
+                btn.title = 'Export this doctrine to PDF';
+                btn.onclick = function(e) {
+                    e.preventDefault();
+                    exportIndividualDoctrine(section.id);
+                };
+                h2.appendChild(btn);
+            }
+        });
+    }
+    
+    // Add buttons when page loads
+    addExportButtons();
+    
     }
     
     // Execute when DOM is ready
@@ -4024,7 +4315,7 @@ console.log('  - Works on mobile and desktop');
                 const oldestKey = Object.keys(this.cache.verses)[0];
                 delete this.cache.verses[oldestKey];
                 this.cache.count--;
-                console.log('⚠ Cache limit reached. Removed oldest verse:', oldestKey);
+                // console.log('⚠ Cache limit reached. Removed oldest verse:', oldestKey);
             }
             
             if (!this.cache.verses[reference]) {
@@ -4046,7 +4337,7 @@ console.log('  - Works on mobile and desktop');
                 lastCleared: Date.now()
             };
             this.saveCache();
-            console.log('✓ Verse cache cleared');
+            // console.log('✓ Verse cache cleared');
         }
         
         getSize() {
@@ -4122,7 +4413,7 @@ console.log('  - Works on mobile and desktop');
     // Clear cache if it's been 30 days
     if (verseCache.shouldClear()) {
         verseCache.clear();
-        console.log('♻️ Periodic cache clear (30 days)');
+        // console.log('♻️ Periodic cache clear (30 days)');
     }
     
     // ============================================================
@@ -4132,7 +4423,7 @@ console.log('  - Works on mobile and desktop');
         // Check cache first
         const cached = verseCache.get(reference);
         if (cached) {
-            console.log('✓ Verse loaded from cache:', reference);
+            // console.log('✓ Verse loaded from cache:', reference);
             return cached;
         }
         
@@ -4153,11 +4444,11 @@ console.log('  - Works on mobile and desktop');
             const waitTime = rateLimiter.getWaitTime();
             
             console.warn('⚠ Rate limit reached');
-            console.log('Remaining requests:');
-            console.log('  Per minute:', remaining.minute);
-            console.log('  Per hour:', remaining.hour);
-            console.log('  Per day:', remaining.day);
-            console.log('Wait time:', waitTime, 'seconds');
+            // console.log('Remaining requests:');
+            // console.log('  Per minute:', remaining.minute);
+            // console.log('  Per hour:', remaining.hour);
+            // console.log('  Per day:', remaining.day);
+            // console.log('Wait time:', waitTime, 'seconds');
             
             return {
                 text: `Rate limit reached. Please wait ${waitTime} seconds. (ESV API allows 60/min, 1000/hour, 5000/day)`,
@@ -4208,29 +4499,29 @@ console.log('  - Works on mobile and desktop');
         reset: () => {
             rateLimiter.resetState();
             botDetector.reset();
-            console.log('✓ Rate limiter reset');
+            // console.log('✓ Rate limiter reset');
         }
     };
     
     // ============================================================
     // Console Status Display
     // ============================================================
-    console.log('🛡️ ESV API Protection Enabled');
-    console.log('Rate Limits:');
-    console.log('  • 60 requests per minute');
-    console.log('  • 1,000 requests per hour');
-    console.log('  • 5,000 requests per day');
-    console.log('  • Max 500 verses cached');
-    console.log('');
-    console.log('Current Status:');
+    // console.log('🛡️ ESV API Protection Enabled');
+    // console.log('Rate Limits:');
+    // console.log('  • 60 requests per minute');
+    // console.log('  • 1,000 requests per hour');
+    // console.log('  • 5,000 requests per day');
+    // console.log('  • Max 500 verses cached');
+    // console.log('');
+    // console.log('Current Status:');
     const remaining = rateLimiter.getRemainingRequests();
-    console.log('  • Remaining today:', remaining.day);
-    console.log('  • Remaining this hour:', remaining.hour);
-    console.log('  • Remaining this minute:', remaining.minute);
-    console.log('  • Cached verses:', verseCache.getSize(), '/ 500');
-    console.log('');
-    console.log('To check status: ESV_RATE_LIMITER.getStatus()');
-    console.log('To clear cache: ESV_RATE_LIMITER.clearCache()');
+    // console.log('  • Remaining today:', remaining.day);
+    // console.log('  • Remaining this hour:', remaining.hour);
+    // console.log('  • Remaining this minute:', remaining.minute);
+    // console.log('  • Cached verses:', verseCache.getSize(), '/ 500');
+    // console.log('');
+    // console.log('To check status: ESV_RATE_LIMITER.getStatus()');
+    // console.log('To clear cache: ESV_RATE_LIMITER.clearCache()');
 })();
 </script>
 
@@ -4390,14 +4681,14 @@ console.log('  - Works on mobile and desktop');
             
             // Single verses are fine, log if multiple
             if (validation.count > 1) {
-                console.log(`📖 Requesting ${validation.count} consecutive verses from ${validation.book || 'Bible'}`);
+                // console.log(`📖 Requesting ${validation.count} consecutive verses from ${validation.book || 'Bible'}`);
             }
             
             // Proceed with protected request
             return await originalProtectedRequest(reference, fetchFunction);
         };
         
-        console.log('✓ ESV verse validation enabled');
+        // console.log('✓ ESV verse validation enabled');
     } else {
         console.warn('⚠ makeProtectedAPIRequest not found. Load rate limiter first.');
     }
@@ -4413,12 +4704,12 @@ console.log('  - Works on mobile and desktop');
         }
     };
     
-    console.log('📏 ESV Query Validation:');
-    console.log('  • Max 500 consecutive verses per query');
-    console.log('  • Max 50% of any book');
-    console.log('  • Validates before API request');
-    console.log('');
-    console.log('To validate: ESV_VERSE_VALIDATOR.validate("John 3:16-20")');
+    // console.log('📏 ESV Query Validation:');
+    // console.log('  • Max 500 consecutive verses per query');
+    // console.log('  • Max 50% of any book');
+    // console.log('  • Validates before API request');
+    // console.log('');
+    // console.log('To validate: ESV_VERSE_VALIDATOR.validate("John 3:16-20")');
 })();
 </script>
 
@@ -4601,30 +4892,30 @@ console.log('  - Works on mobile and desktop');
      */
     if (typeof window.getVerseText === 'undefined') {
         // No existing tooltip system, create one
-        console.log('⚠ Verse tooltip system not found. Run add_verse_preview.py first');
+        // console.log('⚠ Verse tooltip system not found. Run add_verse_preview.py first');
     } else {
         // Override existing getVerseText function
         const originalGetVerseText = window.getVerseText;
         window.getVerseText = async function(reference) {
             return await getVerseText(reference);
         };
-        console.log('✓ Live Bible API integrated with verse tooltips');
+        // console.log('✓ Live Bible API integrated with verse tooltips');
     }
     
     // Expose API configuration for easy updates
     window.BIBLE_API_CONFIG = API_CONFIG;
     
     // Display API status
-    console.log('📖 Bible API Status:');
-    console.log('  ESV API:', API_CONFIG.esv.enabled ? '✓ Enabled' : '✗ Disabled (add API key)');
-    console.log('  API.Bible:', API_CONFIG.apiBible.enabled ? '✓ Enabled' : '✗ Disabled (add API key)');
+    // console.log('📖 Bible API Status:');
+    // console.log('  ESV API:', API_CONFIG.esv.enabled ? '✓ Enabled' : '✗ Disabled (add API key)');
+    // console.log('  API.Bible:', API_CONFIG.apiBible.enabled ? '✓ Enabled' : '✗ Disabled (add API key)');
     
     if (!API_CONFIG.esv.enabled && !API_CONFIG.apiBible.enabled) {
-        console.log('');
-        console.log('To enable live verse previews:');
-        console.log('1. Get free API key from https://api.esv.org/');
-        console.log('2. Edit the HTML file and update API_CONFIG.esv.key');
-        console.log('3. Set API_CONFIG.esv.enabled = true');
+        // console.log('');
+        // console.log('To enable live verse previews:');
+        // console.log('1. Get free API key from https://api.esv.org/');
+        // console.log('2. Edit the HTML file and update API_CONFIG.esv.key');
+        // console.log('3. Set API_CONFIG.esv.enabled = true');
     }
     }
     

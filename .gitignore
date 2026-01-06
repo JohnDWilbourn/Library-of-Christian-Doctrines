@@ -6,7 +6,10 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
+bible_venv/
 *.egg-info/
+*.log
 
 # IDE
 .vscode/
@@ -17,9 +20,38 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Project specific - intermediate files (keep only _wp_clean.html versions)
+# API Keys and Secrets - DO NOT COMMIT
+*_api_key.txt
+*_secrets.txt
+.env
+.env.local
+**/populate_scripture_index.py
+
+# Backup Files
+*_backup.html
+*_with_console.html
+*.bak
+*~
+
+# Project specific - intermediate files (keep only _wp_publish.html versions)
 Doctrines/doctrines_library.html
 Doctrines/doctrines_library_wp.html
+Doctrines/doctrines_library_wp_clean.html
 Doctrines/scripture_index_new.html
 Doctrines/scripture_index_wp.html
+
+# Images/Screenshots (may contain sensitive info)
+Doctrines/Images/error-screen-*.jpg
+Doctrines/Images/www.txt
+
+# Temporary/Generated Files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# WordPress notes with credentials
+Doctrines/additional-css.txt
+Doctrines/project-notes.txt

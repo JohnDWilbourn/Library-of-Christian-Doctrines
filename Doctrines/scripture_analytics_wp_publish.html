@@ -67,29 +67,66 @@
 .analytics-wrapper tr:hover {
     background-color: #eff6ff;
 }
-.analytics-wrapper .back-link {
-    display: inline-block;
+.analytics-wrapper .page-nav {
     margin-bottom: 1.5em;
-    padding: 0.75em 1.5em;
+    padding: 1em;
+    background: linear-gradient(to right, #eff6ff, #dbeafe);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+.analytics-wrapper .page-nav-links {
+    display: inline-flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.analytics-wrapper .page-nav a {
+    display: inline-block;
+    padding: 0.5em 1.2em;
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s ease;
 }
-.analytics-wrapper .back-link:hover {
+.analytics-wrapper .page-nav a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+.analytics-wrapper .page-nav .current-page {
+    font-weight: 600;
+    color: #1e40af;
+    padding: 0.5em 1em;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #8b5cf6;
+}
+.analytics-wrapper .page-nav a.index {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+.analytics-wrapper .page-nav a.index:hover {
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
 }
 </style>
 
 <div class="analytics-wrapper">
 <h2>📊 Scripture Analytics Dashboard</h2>
+
+<!-- Cross-Page Navigation -->
+<div class="page-nav">
+    <div class="page-nav-links">
+        <a href="https://intelligencereport.info/complete-library-of-christian-doctrine/">📖 Doctrines Library</a>
+        <a href="https://intelligencereport.info/comprehensive-biblical-reference-guide/" class="index">📑 Scripture Index</a>
+        <span class="current-page">📊 Analytics</span>
+    </div>
+</div>
+
 <div class="container">
-    <a href="https://intelligencereport.info/complete-library-of-christian-doctrine/" class="back-link">← Back to Doctrines Library</a>
-    
     <div class="stat-box">
         <h3>Overview Statistics</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;">
