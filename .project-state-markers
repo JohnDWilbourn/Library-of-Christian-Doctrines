@@ -1,0 +1,95 @@
+# Project State Markers
+# Machine-readable record of satisfactory project states
+# Format: DATE | COMMIT_SHA | STATE_DESCRIPTION | USER_APPROVAL
+
+# This file tracks user-approved milestones in the project evolution.
+# Each entry represents a state that the user found satisfactory.
+# Use this for reference when restoring or validating project state.
+
+# ============================================================
+# APPROVED STATES
+# ============================================================
+
+2026-01-08 | cde41e8 | Cross-reference system working, main export menu removed from page header, individual doctrine export buttons retained | USER_APPROVED
+
+# ============================================================
+# FUNCTIONALITY REQUIREMENTS (USER-APPROVED)
+# ============================================================
+
+# EXPORT BUTTON PLACEMENT:
+# - NO main export menu button in page headers (removed)
+# - YES individual export buttons on each doctrine section heading
+# - This applies to ALL pages containing doctrines
+
+# CROSS-REFERENCE SYSTEM:
+# - The cross-reference panel is a key feature (user's favorite)
+# - Click on any scripture link to show related verses
+# - Panel slides in from the right
+# - Shows verse relationships with strength indicators
+# - Must remain fully functional
+
+# UNIVERSAL DOCTRINE ATTRIBUTES:
+# - All doctrines across the entire site share common attributes
+# - When styling/features are added to doctrines, they should be consistent
+# - Individual doctrine export buttons are a universal attribute
+
+# ============================================================
+# DOCTRINE DEFINITION & IDENTIFICATION
+# ============================================================
+
+# WHAT IS A DOCTRINE:
+# A doctrine is any standalone theological teaching or compilation of teachings.
+# Doctrines exist in TWO forms:
+#
+# 1. LIBRARY DOCTRINES (in doctrines_library_wp_publish.html):
+#    - Each <section id="..."> containing an <h2> heading is a doctrine
+#    - Examples: "Doctrine of Imputation", "Doctrine of Grace", etc.
+#    - These are shorter, summary-style doctrines
+#
+# 2. STANDALONE DOCTRINE PAGES:
+#    - Full-page treatments of major doctrines
+#    - Located in their own directories (doctrine-of-*)
+#    - The ENTIRE PAGE is ONE doctrine, with multiple sections
+#    - Examples:
+#      * divine-decree_wp_publish.html = "Doctrine of the Divine Decree"
+#      * divine-essence-3_wp_publish.html = "Doctrine of Divine Essence"
+#    - Section headings (h2) within these are SUBSECTIONS, not separate doctrines
+
+# KNOWN DOCTRINE PAGES:
+# - Doctrines/doctrines_library_wp_publish.html (contains 36+ doctrines)
+# - Doctrines/doctrine-of-the-divine-decree/divine-decree_wp_publish.html (1 doctrine)
+# - Doctrines/doctrine-of-divine-essence/divine-essence-3_wp_publish.html (1 doctrine)
+
+# EXPORT BUTTON RULES:
+# - Library page: Export button on EACH doctrine section heading
+# - Standalone pages: Export button on the MAIN doctrine title (h1)
+# - Subsection headings (h2) on standalone pages do NOT get export buttons
+
+# SCRIPT DETECTION PATTERNS:
+# To identify doctrine pages programmatically:
+# - Library: Look for <section id="..."> with <h2> children
+# - Standalone: Look for directories matching "doctrine-of-*"
+# - Or files matching "*doctrine*_wp_publish.html"
+
+# ============================================================
+# CONFLICTING INSTRUCTIONS RESOLVED
+# ============================================================
+
+# The following documentation files contain outdated references to
+# "Export button (bottom right)" which referred to the OLD main export menu.
+# These should be interpreted as referring to individual doctrine export
+# buttons, NOT a floating main export menu:
+#
+# - QUICK_DEPLOY.md
+# - VERSION_3.0_SUMMARY.md
+# - WORDPRESS_DEPLOYMENT.md
+# - WORDPRESS_FIX_DEPLOYMENT.md
+# - TROUBLESHOOTING_WORDPRESS_INTERACTIVE.md
+
+# ============================================================
+# NOTES
+# ============================================================
+
+# This file is for machine/agent reference only.
+# Git commit history provides version control.
+# This file supplements git with explicit user satisfaction markers.

@@ -1028,3 +1028,404 @@ sup {
     console.log(`✓ Verse preview enabled for ${scriptureLinks.length} scripture links`);
 })();
 </script>
+
+<!-- Comprehensive Doctrine Export Menu -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+/* Export menu container */
+.doctrine-export-menu {
+    display: inline-block;
+    position: relative;
+    margin-left: 1em;
+    vertical-align: middle;
+}
+
+/* Export trigger button */
+.doctrine-export-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.4em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+}
+.doctrine-export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+.doctrine-export-btn svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s;
+}
+.doctrine-export-menu.open .doctrine-export-btn svg {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.export-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    min-width: 220px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+.doctrine-export-menu.open .export-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.export-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #374151;
+    transition: all 0.15s ease;
+}
+.export-dropdown-item:hover {
+    background: #f3f4f6;
+    color: #059669;
+}
+.export-dropdown-item .icon {
+    font-size: 1.1em;
+    width: 24px;
+    text-align: center;
+}
+.export-dropdown-item .label {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* Divider */
+.export-dropdown-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 6px 0;
+}
+
+/* Toast notification */
+.export-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.export-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+.export-toast.success { background: #059669; }
+.export-toast.error { background: #dc2626; }
+
+@media print {
+    .doctrine-export-menu, .nav-bar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctrine-export-menu {
+        display: block;
+        margin: 0.5em auto;
+    }
+    .export-dropdown {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    .doctrine-export-menu.open .export-dropdown {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .export-dropdown {
+        background: #1f2937;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+    .export-dropdown-item {
+        color: #e5e7eb;
+    }
+    .export-dropdown-item:hover {
+        background: #374151;
+        color: #10b981;
+    }
+    .export-dropdown-divider {
+        background: #374151;
+    }
+}
+</style>
+
+<script>
+// Comprehensive Export Menu for Standalone Doctrine Page
+(function() {
+    'use strict';
+
+    const doctrineName = 'The Doctrine of Divine Essence';
+    const doctrineId = 'divine-essence';
+
+    // Toast notification system
+    function showToast(message, type = 'success') {
+        const existingToast = document.querySelector('.export-toast');
+        if (existingToast) existingToast.remove();
+
+        const toast = document.createElement('div');
+        toast.className = `export-toast ${type}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => toast.classList.add('show'), 10);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    }
+
+    // Get doctrine content for export
+    function getDoctrineContent() {
+        const content = document.querySelector('.doctrine-content-wrapper');
+        if (!content) return null;
+
+        const clone = content.cloneNode(true);
+        const exportMenu = clone.querySelector('.doctrine-export-menu');
+        if (exportMenu) exportMenu.remove();
+
+        return clone;
+    }
+
+    // Export to PDF
+    window.exportToPDF = function() {
+        const content = getDoctrineContent();
+        if (!content) return;
+
+        const tempDiv = document.createElement('div');
+        tempDiv.style.cssText = 'padding: 40px; max-width: 800px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.8;';
+        tempDiv.appendChild(content);
+
+        const originalContent = document.body.innerHTML;
+        const originalTitle = document.title;
+
+        document.body.innerHTML = tempDiv.outerHTML;
+        document.title = doctrineName;
+
+        window.print();
+
+        setTimeout(() => {
+            document.body.innerHTML = originalContent;
+            document.title = originalTitle;
+            location.reload();
+        }, 500);
+    };
+
+    // Copy/Share Link
+    window.exportShareLink = function() {
+        const url = window.location.href.split('#')[0];
+
+        if (navigator.share) {
+            navigator.share({ title: doctrineName, url: url }).catch(() => {
+                copyToClipboard(url);
+                showToast('Link copied to clipboard!');
+            });
+        } else {
+            copyToClipboard(url);
+            showToast('Link copied to clipboard!');
+        }
+        closeMenu();
+    };
+
+    // Copy to Clipboard (text)
+    window.exportCopyText = function() {
+        const content = getDoctrineContent();
+        if (!content) return;
+
+        let text = `${doctrineName}\n${'='.repeat(doctrineName.length)}\n\n`;
+        text += content.innerText;
+
+        copyToClipboard(text);
+        showToast('Content copied to clipboard!');
+        closeMenu();
+    };
+
+    // Download as Image
+    window.exportAsImage = async function() {
+        if (typeof html2canvas === 'undefined') {
+            showToast('Image export loading... please try again.', 'error');
+            return;
+        }
+
+        showToast('Generating image...');
+
+        try {
+            const content = document.querySelector('.doctrine-content-wrapper');
+            const canvas = await html2canvas(content, {
+                backgroundColor: '#ffffff',
+                scale: 2,
+                logging: false,
+                useCORS: true
+            });
+
+            const link = document.createElement('a');
+            link.download = `${doctrineId}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+
+            showToast('Image downloaded!');
+        } catch (error) {
+            console.error('Image export error:', error);
+            showToast('Error generating image', 'error');
+        }
+        closeMenu();
+    };
+
+    // Copy as HTML
+    window.exportCopyHTML = function() {
+        const content = getDoctrineContent();
+        if (!content) return;
+
+        copyToClipboard(content.outerHTML);
+        showToast('HTML copied to clipboard!');
+        closeMenu();
+    };
+
+    // Get Embed Code
+    window.exportEmbedCode = function() {
+        const url = window.location.href.split('#')[0];
+        const embedCode = `<iframe src="${url}" title="${doctrineName}" width="100%" height="600" frameborder="0" style="border: 1px solid #e5e7eb; border-radius: 8px;"></iframe>`;
+
+        copyToClipboard(embedCode);
+        showToast('Embed code copied to clipboard!');
+        closeMenu();
+    };
+
+    // Clipboard helper
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+        } else {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.cssText = 'position: fixed; left: -9999px;';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }
+
+    function closeMenu() {
+        const menu = document.querySelector('.doctrine-export-menu');
+        if (menu) menu.classList.remove('open');
+    }
+
+    // Create and insert export menu
+    function initExportMenu() {
+        const mainTitle = document.querySelector('.doctrine-content-wrapper h1');
+        if (!mainTitle || mainTitle.querySelector('.doctrine-export-menu')) return;
+
+        const menuDiv = document.createElement('div');
+        menuDiv.className = 'doctrine-export-menu';
+
+        menuDiv.innerHTML = `
+            <button class="doctrine-export-btn" title="Export options">
+                <span>Export</span>
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+            <div class="export-dropdown">
+                <button class="export-dropdown-item" onclick="exportToPDF()">
+                    <span class="icon">📄</span>
+                    <span class="label">Export to PDF</span>
+                </button>
+                <button class="export-dropdown-item" onclick="exportShareLink()">
+                    <span class="icon">🔗</span>
+                    <span class="label">Share / Copy Link</span>
+                </button>
+                <button class="export-dropdown-item" onclick="exportCopyText()">
+                    <span class="icon">📋</span>
+                    <span class="label">Copy to Clipboard</span>
+                </button>
+                <div class="export-dropdown-divider"></div>
+                <button class="export-dropdown-item" onclick="exportAsImage()">
+                    <span class="icon">🖼️</span>
+                    <span class="label">Download as Image</span>
+                </button>
+                <button class="export-dropdown-item" onclick="exportCopyHTML()">
+                    <span class="icon">📝</span>
+                    <span class="label">Copy as HTML</span>
+                </button>
+                <button class="export-dropdown-item" onclick="exportEmbedCode()">
+                    <span class="icon">🧩</span>
+                    <span class="label">Embed Code</span>
+                </button>
+            </div>
+        `;
+
+        // Toggle menu
+        const btn = menuDiv.querySelector('.doctrine-export-btn');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            menuDiv.classList.toggle('open');
+        });
+
+        mainTitle.appendChild(menuDiv);
+    }
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.doctrine-export-menu')) {
+            closeMenu();
+        }
+    });
+
+    // Initialize
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initExportMenu);
+    } else {
+        initExportMenu();
+    }
+})();
+</script>

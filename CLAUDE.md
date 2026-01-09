@@ -245,10 +245,63 @@ Both light and dark mode styles are included in the CSS.
 
 ### Export Functionality
 
-Individual doctrines can be exported to PDF via browser print dialog:
-- Export buttons added to each section heading
-- JavaScript temporarily isolates section content for printing
-- CSS includes `@media print` rules
+Each doctrine has a comprehensive export dropdown menu with 6 options:
+
+1. **Export to PDF** - Opens browser print dialog for Save As PDF
+2. **Share / Copy Link** - Uses Web Share API or copies direct link to clipboard
+3. **Copy to Clipboard** - Copies plain text content
+4. **Download as Image** - Generates PNG using html2canvas
+5. **Copy as HTML** - Copies raw HTML markup
+6. **Embed Code** - Generates iframe embed code
+
+**Export Menu Implementation:**
+- Dropdown menu appears on click (not hover)
+- Toast notifications confirm actions
+- Dark mode support included
+- Mobile-responsive positioning
+- CSS includes `@media print` rules to hide UI elements
+
+**IMPORTANT - Export Menu Placement Rules:**
+- Library page (`doctrines_library_wp_publish.html`): Export menu on EACH doctrine section `<h2>` heading
+- Standalone doctrine pages: Export menu on the MAIN doctrine title `<h1>`
+- NO floating export menu in page corners
+
+## Doctrine Definition & Structure
+
+### What Constitutes a Doctrine
+
+A doctrine is any standalone theological teaching. Doctrines exist in TWO forms:
+
+1. **Library Doctrines** (in `doctrines_library_wp_publish.html`):
+   - Each `<section id="...">` containing an `<h2>` heading is a doctrine
+   - These are shorter, summary-style doctrines
+   - Each gets its own export button
+
+2. **Standalone Doctrine Pages**:
+   - Full-page treatments of major doctrines
+   - Located in their own directories (`doctrine-of-*`)
+   - The ENTIRE PAGE is ONE doctrine with multiple subsections
+   - Subsection headings (`<h2>`) are NOT separate doctrines
+   - Export button goes on the main `<h1>` title only
+
+### Known Doctrine Pages
+
+| File | Type | Doctrines |
+|------|------|-----------|
+| `Doctrines/doctrines_library_wp_publish.html` | Library | 36+ doctrines |
+| `Doctrines/doctrine-of-the-divine-decree/divine-decree_wp_publish.html` | Standalone | 1 doctrine |
+| `Doctrines/doctrine-of-divine-essence/divine-essence-3_wp_publish.html` | Standalone | 1 doctrine |
+
+### Universal Doctrine Attributes
+
+All doctrines across the entire site share common attributes:
+- Export button functionality
+- Scripture link styling
+- Verse preview tooltips (where implemented)
+- Consistent typography and spacing
+- Dark mode support
+
+When adding features to doctrines, ensure they are applied universally.
 
 ### Search Implementation
 
