@@ -9,117 +9,77 @@
 </style>
 
 <style>
-/* List Style Types - NO wrapper prefix needed */
-ol.roman {
-    list-style-type: upper-roman;
-    margin: 1.5em 0;
-    padding-left: 2.5em;
-}
-ol.alpha {
-    list-style-type: upper-alpha;
-    padding-left: 2em;
-    margin: 1em 0;
-}
-ol.lower-alpha {
-    list-style-type: lower-alpha;
-    padding-left: 2em;
-    margin: 1em 0;
-}
-ol.lower-roman {
-    list-style-type: lower-roman;
-    padding-left: 2em;
-    margin: 1em 0;
-}
-ol.decimal, ol.numeric {
-    list-style-type: decimal;
-    padding-left: 2em;
-    margin: 1em 0;
-}
-ol.upper-alpha {
-    list-style-type: upper-alpha;
-    padding-left: 2em;
-    margin: 1em 0;
+/* ===== BASE COLORS - LIGHT MODE ===== */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+    --border-color: #e5e7eb;
+    --accent-blue: #3b82f6;
+    --accent-blue-dark: #2563eb;
+    --accent-purple: #8b5cf6;
+    --accent-purple-dark: #7c3aed;
 }
 
-/* Explicit Light Mode - Default Styling */
-body {
-    background-color: #ffffff;
-    color: #1f2937;
-}
-
-.bd-wrapper {
-    background-color: #ffffff;
-    color: #1f2937;
-}
-
-/* Scoped Wrapper Styles */
-.doctrine-content-wrapper {
-    font-family: Georgia, serif;
+/* ===== WRAPPER AND CONTAINER ===== */
+.bd-wrapper, .doctrine-content-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     max-width: 900px;
     margin: 2em auto;
-    line-height: 1.8;
     padding: 20px;
-    background-color: #ffffff;
-    color: #1f2937;
-}
-.doctrine-content-wrapper h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #2c5282;
-}
-.doctrine-content-wrapper h2 {
-    font-size: 1.6em;
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    color: #2d3748;
-    border-bottom: 2px solid #4299e1;
-    padding-bottom: 0.5em;
-}
-.doctrine-content-wrapper h3 {
-    font-size: 1.3em;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-    color: #2d3748;
-}
-.doctrine-content-wrapper .appendix-title {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #2c5282;
-}
-.doctrine-content-wrapper .outline-subtitle {
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1.5em;
-    color: #4a5568;
-}
-.doctrine-content-wrapper li {
-    margin-bottom: 1em;
-}
-.doctrine-content-wrapper p {
-    margin: 0.8em 0;
-}
-.doctrine-content-wrapper .section {
-    margin-bottom: 4em;
-}
-.doctrine-content-wrapper .letter {
-    font-weight: bold;
-    margin-right: 0.5em;
-}
-.doctrine-content-wrapper sup {
-    font-size: 0.75em;
-    vertical-align: super;
-}
-.doctrine-content-wrapper .roman {
-    font-weight: bold;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
 }
 
-/* Light Mode Link Styling */
+/* ===== TYPOGRAPHY ===== */
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1a202c;
+    text-align: center;
+    margin: 0 0 0.5em 0;
+    padding: 1em 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+p {
+    margin: 1em 0;
+    color: var(--text-primary);
+}
+
+/* ===== LINKS ===== */
 a {
-    color: #2563eb;
+    color: var(--accent-blue);
     text-decoration: none;
     font-weight: 500;
     border-bottom: 1px solid #93c5fd;
@@ -127,75 +87,122 @@ a {
 }
 
 a:hover {
-    color: #1d4ed8;
-    border-bottom-color: #2563eb;
+    color: var(--accent-blue-dark);
+    border-bottom-color: var(--accent-blue);
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #374151;
-        color: #f3f4f6;
-    }
-
-    .bd-wrapper {
-        background-color: #374151;
-        color: #f3f4f6;
-    }
-
-    .doctrine-content-wrapper {
-        background-color: #374151;
-        color: #f3f4f6;
-    }
-
-    .doctrine-content-wrapper h1,
-    .doctrine-content-wrapper .appendix-title {
-        color: #93c5fd;
-        text-shadow: 2px 2px 12px rgba(255,255,255,0.3), 0 0 20px rgba(147,197,253,0.4);
-    }
-
-    .doctrine-content-wrapper h2 {
-        color: #e0e7ff;
-        border-bottom-color: #60a5fa;
-    }
-
-    .doctrine-content-wrapper h3 {
-        color: #e0e7ff;
-    }
-
-    .doctrine-content-wrapper .outline-subtitle {
-        color: #d1d5db;
-    }
-
-    .doctrine-content-wrapper p,
-    .doctrine-content-wrapper li {
-        color: #f3f4f6;
-    }
-
-    a {
-        color: #60a5fa;
-        font-weight: 500;
-        border-bottom: 1px solid #3b82f6;
-    }
-
-    a:hover {
-        color: #93c5fd;
-        border-bottom-color: #60a5fa;
-    }
+/* ===== LISTS ===== */
+ol, ul {
+    margin: 1.5em 0;
+    padding-left: 2.5em;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .doctrine-content-wrapper {
-        padding: 10px;
-        font-size: 16px;
-    }
-    .doctrine-content-wrapper h1 { font-size: 1.6em; }
-    .doctrine-content-wrapper h2 { font-size: 1.3em; }
-    .doctrine-content-wrapper h3 { font-size: 1.1em; }
+li {
+    margin-bottom: 1em;
+    color: var(--text-primary);
 }
 
-/* Verse Preview Tooltip */
+/* List Style Types */
+ol.roman {
+    list-style-type: upper-roman;
+}
+
+ol.alpha, ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+
+ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+ol.lower-roman {
+    list-style-type: lower-roman;
+}
+
+ol.decimal, ol.numeric {
+    list-style-type: decimal;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    margin-bottom: 4em;
+}
+
+hr {
+    margin: 3em 0;
+    border: none;
+    border-top: 2px solid var(--border-color);
+}
+
+/* ===== NAVIGATION (Cross-Page Links) ===== */
+.page-nav, .cross-nav {
+    margin: 1.5em 0;
+    padding: 1em;
+    background: linear-gradient(to right, #eff6ff, #dbeafe);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.page-nav-links {
+    display: inline-flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation Button Base Style */
+.page-nav a, .cross-nav a {
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    border-bottom: none !important;
+}
+
+.page-nav a:hover, .cross-nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Current Page Indicator */
+.current-page {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-weight: 600;
+    color: #1e40af;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid var(--accent-blue);
+}
+
+/* ===== NAVIGATION COLOR SCHEME ===== */
+.nav-doctrines-library {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.nav-scripture-index {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.nav-analytics {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.nav-divine-essence {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.nav-divine-decree {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+/* ===== VERSE PREVIEW TOOLTIP ===== */
 .verse-tooltip {
     position: absolute;
     background-color: #1f2937;
@@ -208,7 +215,7 @@ a:hover {
     z-index: 1000;
     display: none;
     line-height: 1.6;
-    font-family: Georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     border: 1px solid #4b5563;
 }
 
@@ -216,10 +223,128 @@ a:hover {
     display: block;
 }
 
+/* ===== DARK MODE ===== */
 @media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #374151;
+        --bg-tertiary: #4b5563;
+        --text-primary: #f3f4f6;
+        --text-secondary: #d1d5db;
+        --text-tertiary: #9ca3af;
+        --border-color: #4b5563;
+        --accent-blue: #60a5fa;
+        --accent-blue-dark: #93c5fd;
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    .bd-wrapper, .doctrine-content-wrapper {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    h1 {
+        color: #f7fafc;
+        text-shadow: 2px 2px 12px rgba(255,255,255,0.3), 0 0 20px rgba(147,197,253,0.4);
+    }
+
+    h2 {
+        color: var(--text-primary);
+        border-bottom-color: var(--accent-blue);
+    }
+
+    h3, h4 {
+        color: var(--text-secondary);
+    }
+
+    p, li {
+        color: var(--text-primary);
+    }
+
+    a {
+        color: var(--accent-blue);
+        border-bottom-color: #3b82f6;
+    }
+
+    a:hover {
+        color: var(--accent-blue-dark);
+        border-bottom-color: var(--accent-blue);
+    }
+
+    .page-nav, .cross-nav {
+        background: linear-gradient(to right, #1e3a8a, #1e40af);
+    }
+
+    .current-page {
+        color: #93c5fd;
+        background: var(--bg-secondary);
+        border-color: var(--accent-blue);
+    }
+
+    hr {
+        border-top-color: var(--border-color);
+    }
+
     .verse-tooltip {
         background-color: #1f2937;
         border-color: #60a5fa;
+    }
+}
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 768px) {
+    .doctrine-content-wrapper, .bd-wrapper {
+        padding: 10px;
+        font-size: 16px;
+        margin: 1em auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    .page-nav, .cross-nav {
+        padding: 0.75em;
+    }
+
+    .page-nav a, .cross-nav a {
+        padding: 0.4em 1em;
+        font-size: 0.9em;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .page-nav, .cross-nav,
+    .cross-ref-toggle, .cross-ref-panel {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+        border-bottom: none;
     }
 }
 </style>
@@ -241,23 +366,15 @@ a:hover {
 <div class="bd-wrapper">
 
 <!-- Cross-Page Navigation -->
-<div class="cross-nav" style="margin: 1.5em 0; padding: 1em; background: linear-gradient(to right, #eff6ff, #dbeafe); border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);">
-    <div style="display: inline-flex; gap: 1em; flex-wrap: wrap; justify-content: center; align-items: center;">
-        <a href="https://intelligencereport.info/complete-library-of-christian-doctrine/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3); transition: all 0.2s ease; border-bottom: none;">📖 Doctrines Library</a>
-        <a href="https://intelligencereport.info/comprehensive-biblical-reference-guide/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3); transition: all 0.2s ease; border-bottom: none;">📑 Scripture Index</a>
-        <a href="https://intelligencereport.info/scripture-analytics/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3); transition: all 0.2s ease; border-bottom: none;">📊 Analytics</a>
-        <a href="https://intelligencereport.info/doctrine-of-divine-essence/" style="display: inline-block; padding: 0.5em 1.2em; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3); transition: all 0.2s ease; border-bottom: none;">✨ Divine Essence</a>
+<div class="page-nav">
+    <div class="page-nav-links">
+        <a href="https://intelligencereport.info/complete-library-of-christian-doctrine/" class="nav-doctrines-library">📖 Doctrines Library</a>
+        <a href="https://intelligencereport.info/comprehensive-biblical-reference-guide/" class="nav-scripture-index">📑 Scripture Index</a>
+        <a href="https://intelligencereport.info/scripture-analytics/" class="nav-analytics">📊 Analytics</a>
+        <a href="https://intelligencereport.info/doctrine-of-divine-essence/" class="nav-divine-essence">✨ Divine Essence</a>
+        <span class="current-page">⚖️ Divine Decree</span>
     </div>
 </div>
-
-<!-- Dark mode support for navigation -->
-<style>
-@media (prefers-color-scheme: dark) {
-    .cross-nav {
-        background: linear-gradient(to right, #1e3a8a, #1e40af) !important;
-    }
-}
-</style>
 
 <div class="doctrine-content-wrapper">
 
